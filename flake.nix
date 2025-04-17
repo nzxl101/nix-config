@@ -51,7 +51,7 @@
     homeConfigurations.${primaryUser} = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
-        inherit inputs hostname homeStateVersion primaryUser;
+        inherit inputs homeStateVersion primaryUser;
       };
       modules = [
         ./home/nzxl

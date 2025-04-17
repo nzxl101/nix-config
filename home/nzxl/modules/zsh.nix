@@ -1,4 +1,4 @@
-{ config, hostname, ... }: {
+{ config, ... }: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -8,8 +8,9 @@
     shellAliases =
       let
         configDir = "~/nix-config";
+        currentHost = config.networking.hostName;
       in {
-        "rebuild" = "sudo nixos-rebuild switch --flake ${configDir}#${hostname}";
+        "rebuild" = "sudo nixos-rebuild switch --flake ${configDir}#${currentHost}";
         "update" = "nix flake update ${configDir} && sudo nixos-rebuild switch --flake ${configDir}#${hostname}";
         "gc" = "nix-collect-garbage -d";
 
