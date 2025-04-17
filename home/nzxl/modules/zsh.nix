@@ -8,13 +8,12 @@
     shellAliases =
       let
         configDir = "~/nix-config";
-        currentHost = config.networking.hostName;
-        user = "nzxl";
+        currentUser = config.home.username;
       in {
-        "rebuild" = "sudo nixos-rebuild switch --flake ${configDir}#${currentHost}";
-        "update" = "nix flake update ${configDir} && sudo nixos-rebuild switch --flake ${configDir}#${currentHost}";
+        "rebuild" = "sudo nixos-rebuild switch --flake ${configDir}#$(hostname)";
+        "update" = "nix flake update ${configDir} && sudo nixos-rebuild switch --flake ${configDir}#$(hostname)";
         "gc" = "nix-collect-garbage -d";
-        "hs" = "home-manager switch --flake ${configDir}#${user}";
+        "hs" = "home-manager switch --flake ${configDir}#${currentUser}";
 
         "ll" = "ls -l";
       };

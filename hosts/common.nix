@@ -7,6 +7,7 @@
         home-manager
         btop
         curl
+        git
         nix-output-monitor
     ];
 }
