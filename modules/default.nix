@@ -1,4 +1,4 @@
-{
+{ primaryUser, ... }: {
   imports = [
     ./boot.nix
     ./user.nix
