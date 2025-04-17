@@ -10,20 +10,24 @@
         "QT_QPA_PLATFORM,wayland"
       ];
 
-      monitor = ",2560x1440@165,auto,1.5";
+      monitor = ",2560x1440@165,auto,1.2";
 
       "$mainMod" = "SUPER";
       "$terminal" = "ghostty";
+      "$browser" = "brave";
 
       bind = [
         # Launch terminal
         "$mainMod, RETURN, exec, $terminal"
 
+        # Launch browser
+        "$mainMod, F, exec, $browser"
+
         # Move focused window
-        "$mainMod, left, movewindow, l"
-        "$mainMod, right, movewindow, r"
-        "$mainMod, up, movewindow, u"
-        "$mainMod, down, movewindow, d"
+        "$mainMod SHIFT, left, movewindow, l"
+        "$mainMod SHIFT, right, movewindow, r"
+        "$mainMod SHIFT, up, movewindow, u"
+        "$mainMod SHIFT, down, movewindow, d"
       ];
     };
   };
