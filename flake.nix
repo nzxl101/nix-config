@@ -46,7 +46,7 @@
         "${host.hostname}" = makeSystem {
           inherit (host) hostname stateVersion;
         };
-    }) {} hosts;
+      }) {} hosts;
 
     homeConfigurations.${primaryUser} = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
@@ -54,7 +54,7 @@
         inherit inputs homeStateVersion primaryUser;
       };
       modules = [
-        ./home/nzxl
+        ./home/${primaryUser}
       ];
     };
   };
