@@ -8,5 +8,5 @@
     username = primaryUser;
     homeDirectory = "/home/${primaryUser}";
     stateVersion = "24.11";
-  }
+  };
 }
