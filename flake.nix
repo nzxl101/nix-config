@@ -54,7 +54,7 @@
         inherit inputs homeStateVersion primaryUser;
       };
       modules = [
-        ./home/${primaryUser}
+        ./home/${primaryUser}/home.nix
       ];
     };
   };

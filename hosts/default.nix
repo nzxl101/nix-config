@@ -7,8 +7,6 @@
         home-manager
         btop
         curl
-        neovim
         nix-output-monitor
-        tmux
     ];
 }

@@ -7,5 +7,6 @@
     ./nix.nix
     ./audio.nix
     ./hyprland.nix
+    ./home-manager.nix
   ];
 }
