@@ -21,23 +21,23 @@
 
       bind = [
         # Kill active window
-        "$mainMod, SHIFT, Q, killactive"
+        "$mainMod SHIFT, Q, killactive"
 
         # Launch file explorer
-        "$mainMod, SHIFT, E, exec, $fileBrowser"
+        "$mainMod SHIFT, E, exec, $fileBrowser"
         # Launch terminal
-        "$mainMod, SHIFT, RETURN, exec, $terminal"
+        "$mainMod SHIFT, RETURN, exec, $terminal"
         # Launch browser
-        "$mainMod, SHIFT, F, exec, $browser"
+        "$mainMod SHIFT, F, exec, $browser"
         # Launcher
-        "$mainMod, SHIFT, D, exec, $launcher"
+        "$mainMod SHIFT, D, exec, $launcher"
 
         # Toggle floating
-        "$mainMod, SHIFT, SPACE, togglefloating"
+        "$mainMod SHIFT, SPACE, togglefloating"
         # Toggle split
-        "$mainMod, SHIFT, S, togglesplit"
+        "$mainMod SHIFT, S, togglesplit"
         # Pin
-        "$mainMod, SHIFT, P, pin"
+        "$mainMod SHIFT, P, pin"
 
         # Move focused window
         "$mainMod SHIFT, left, movewindow, l"
