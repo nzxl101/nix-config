@@ -34,6 +34,9 @@
         };
         inherit inputs system stateVersion hostname primaryUser;
       };
+      modules = [
+        ./hosts/${hostname}
+      ];
     };
   in
   {
