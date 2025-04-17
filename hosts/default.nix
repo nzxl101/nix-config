@@ -10,5 +10,6 @@
         curl
         neovim
         nix-output-monitor
+        tmux
     ];
 }
