@@ -11,7 +11,7 @@
         currentHost = config.networking.hostName;
       in {
         "rebuild" = "sudo nixos-rebuild switch --flake ${configDir}#${currentHost}";
-        "update" = "nix flake update ${configDir} && sudo nixos-rebuild switch --flake ${configDir}#${hostname}";
+        "update" = "nix flake update ${configDir} && sudo nixos-rebuild switch --flake ${configDir}#${currentHost}";
         "gc" = "nix-collect-garbage -d";
 
         "ll" = "ls -l";
