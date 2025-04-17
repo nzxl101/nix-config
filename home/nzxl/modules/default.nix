@@ -3,5 +3,5 @@
     ./git.nix
     ./hyprland
     ./zsh.nix
-  ]
+  ];
 }
