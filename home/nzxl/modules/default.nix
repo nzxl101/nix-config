@@ -6,5 +6,7 @@
     ./tmux.nix
     ./ghostty.nix
     ./hyprland.nix
+    ./thunar.nix
+    ./tofi.nix
   ];
 }
