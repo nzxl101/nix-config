@@ -9,5 +9,5 @@
     };
   };
 
-  services.getty.autoLoginUser = primaryUser;
+  services.getty.autologinUser = primaryUser;
 }
