@@ -6,7 +6,7 @@
     users.${primaryUser} = {
       isNormalUser = true;
       extraGroups = [ "networkmanager" "wheel" "input" ];
-    }
+    };
   };
 
   services.getty.autoLoginUser = primaryUser;
