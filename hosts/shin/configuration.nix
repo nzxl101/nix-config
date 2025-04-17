@@ -7,7 +7,7 @@
   system.stateVersion = stateVersion;
 
   hardware.openrazer.enable = true;
-  users.users.${primaryUser} = { extraGroups = [ "openrazer" ] };
+  users.users.${primaryUser} = { extraGroups = [ "openrazer" ]; };
   services.tlp.enable = true;
 
   # TODO: Nvidia Optimus/AMD iGPU Switch
