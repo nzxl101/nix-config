@@ -12,12 +12,19 @@
 
       monitor = ",2560x1440@165,auto,1.25";
 
-      # "$mainMod" = "SUPER";
+      "$mainMod" = "SUPER";
       "$terminal" = "ghostty";
 
-      # bind = [
+      bind = [
+        # Launch terminal
+        "$mainMod, RETURN, exec, $terminal"
 
-      # ];
+        # Move focused window
+        "$mainMod, left, movewindow, l"
+        "$mainMod, right, movewindow, r"
+        "$mainMod, up, movewindow, u"
+        "$mainMod, down, movewindow, d"
+      ];
     };
   };
 }
