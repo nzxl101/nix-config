@@ -37,6 +37,7 @@
           ./hosts
           ./hosts/shin
           disko.nixosModules.disko
+          ./hosts/shin/disko.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
