@@ -10,7 +10,7 @@
         "QT_QPA_PLATFORM,wayland"
       ];
 
-      monitor = ",2560x1440@165,auto,1.25";
+      monitor = ",2560x1440@165,auto,1.5";
 
       "$mainMod" = "SUPER";
       "$terminal" = "ghostty";
