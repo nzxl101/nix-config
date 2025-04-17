@@ -16,14 +16,14 @@
       "$mainMod" = "SUPER";
       "$terminal" = "ghostty";
       "$browser" = "brave";
-      "$fileExplorer" = "yazi";
-      "$launcher" = "tofi-drun --drun-launch=true";
+      "$fileBrowser" = "$terminal -e sh -c 'yazi'";
+      "$launcher" = "tofi-drun --drun-launch=true"
 
       bind = [
         # Kill active window
         "$mainMod SHIFT, Q, killactive"
 
-        # Launch file explorer
+        # Launch file browser
         "$mainMod SHIFT, E, exec, $fileBrowser"
         # Launch terminal
         "$mainMod SHIFT, RETURN, exec, $terminal"
@@ -68,7 +68,7 @@
         # Screenshot (Full screen)
         ", Print, exec, grimblast --notify --cursor copysave screen"
         # Screenshot (Select region)
-        ", SHIFT, Print, exec, grimblast --notify --cursor copysave area"
+        ", SHIFT Print, exec, grimblast --notify --cursor copysave area"
       ];
 
       bindm = [
