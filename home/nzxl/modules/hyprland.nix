@@ -35,8 +35,8 @@
         # Toggle floating
         "$mainMod SHIFT, SPACE, togglefloating"
         # Toggle split
-        "$mainMod SHIFT, S, togglesplit"
-        # Pin
+        "$mainMod SHIFT, Y, togglesplit"
+        # Pin window
         "$mainMod SHIFT, P, pin"
 
         # Move focused window
@@ -66,9 +66,9 @@
         "$mainMod SHIFT, 5, movetoworkspacesilent, 5"
 
         # Screenshot (Full screen)
-        ", Print, exec, grimblast --notify --cursor copysave screen"
+        "$mainMod, S, exec, grimblast --notify --cursor copysave screen"
         # Screenshot (Select region)
-        ", SHIFT Print, exec, grimblast --notify --cursor copysave area"
+        "$mainMod SHIFT, S, exec, grimblast --notify --cursor copysave area"
       ];
 
       bindm = [
