@@ -9,10 +9,12 @@
       let
         configDir = "~/nix-config";
         currentHost = config.networking.hostName;
+        user = "nzxl";
       in {
         "rebuild" = "sudo nixos-rebuild switch --flake ${configDir}#${currentHost}";
         "update" = "nix flake update ${configDir} && sudo nixos-rebuild switch --flake ${configDir}#${currentHost}";
         "gc" = "nix-collect-garbage -d";
+        "hs" = "home-manager switch --flake ${configDir}#${user}";
 
         "ll" = "ls -l";
       };

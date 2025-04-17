@@ -35,8 +35,8 @@
         inherit inputs system stateVersion hostname primaryUser;
       };
       modules = [
-        ./hosts
-        ./hosts/${hostname}
+        ./hosts/common.nix
+        ./hosts/${hostname}/configuration.nix
       ];
     };
   in
