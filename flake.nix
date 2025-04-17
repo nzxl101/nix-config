@@ -19,14 +19,14 @@
   outputs = { self, nixpkgs, nixpkgs-stable, home-manager, disko, nixos-hardware, ... }@inputs:
   let
     system = "x86_64-linux";
+    primaryUser = "nzxl";
     specialArgs = {
       pkgs-stable = import nixpkgs-stable {
         inherit system;
         config.allowUnfree = true;
       };
-      inherit inputs system;
+      inherit inputs system primaryUser;
     };
-    primaryUser = "nzxl";
   in
   {
     nixosConfigurations = {
