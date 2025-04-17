@@ -12,6 +12,8 @@ in
           type = "gpt";
           partitions = {
             ESP = {
+              priority = 1;
+              name = "ESP";
               size = "1G";
               type = "EF00";
               content = {
@@ -37,7 +39,6 @@ in
                     mountpoint = "/";
                   };
                   "/home" = {
-                    mountOptions = [ "compress=zstd" "noatime" ];
                     mountpoint = "/home";
                   };
                   "/nix" = {
@@ -45,11 +46,14 @@ in
                     mountpoint = "/nix";
                   };
                   "/var/log" = {
+                    mountOptions = [ "compress=zstd" "noatime" ];
                     mountpoint = "/var/log";
-                  };
+                  }
                 };
+
+                mountOptions = [ "compress=zstd" "noatime" ];
+                mountpoint = "/partition-root";
               };
-              mountpoint = "/partition-root";
             };
           };
         };
