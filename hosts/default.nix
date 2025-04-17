@@ -11,5 +11,4 @@
         neovim
         nix-output-monitor
     ];
-    system.stateVersion = "24.11";
 }

@@ -1,7 +1,8 @@
-{ pkgs, primaryUser, ... }: {
+{ pkgs, primaryUser, stateVersion, hostname, ... }: {
   imports = [
     #./hardware-configuration.nix
     ./packages.nix
   ];
-  networking.hostName = "shin";
+  networking.hostName = hostname;
+  system.stateVersion = stateVersion;
 }

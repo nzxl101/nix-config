@@ -19,33 +19,39 @@
   outputs = { self, nixpkgs, nixpkgs-stable, home-manager, disko, nixos-hardware, ... }@inputs:
   let
     system = "x86_64-linux";
+    homeStateVersion = "24.11";
     primaryUser = "nzxl";
-    specialArgs = {
-      pkgs-stable = import nixpkgs-stable {
-        inherit system;
-        config.allowUnfree = true;
+    hosts = [
+      { hostname = "shin"; stateVersion = "24.11"; }
+    ];
+
+    makeSystem = { hostname, stateVersion }: nixpkgs.lib.nixosSystem {
+      system = system;
+      specialArgs = {
+        pkgs-stable = import nixpkgs-stable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        inherit inputs system stateVersion hostname primaryUser;
       };
-      inherit inputs system primaryUser;
     };
   in
   {
-    nixosConfigurations = {
-      # == Razer Blade 14 (2021) == #
-      "shin" = nixpkgs.lib.nixosSystem {
-        inherit system specialArgs;
-        modules = [
-          ./hosts
-          ./hosts/shin
-          disko.nixosModules.disko
-          ./hosts/shin/disko.nix
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${primaryUser} = import ./home/${primaryUser};
-          }
-        ];
+    nixosConfigurations = nixpkgs.lib.fold1' (configs: host:
+      configs // {
+        "${host.hostname}" = makeSystem {
+          inherit (host) hostname stateVersion;
+        };
+    }) {} hosts;
+
+    homeConfigurations.${primaryUser} = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.${system};
+      extraSpecialArgs = {
+        inherit inputs homeStateVersion primaryUser;
       };
-      # == Adding my desktop later.. == #
+      modules = [
+        ./home/nzxl
+      ];
     };
   };
 }
