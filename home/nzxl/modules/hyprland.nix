@@ -11,7 +11,7 @@
         "XDG_SCREENSHOTS_DIR,$HOME/Pictures/Screenshots"
       ];
 
-      monitor = ",2560x1440@165,auto,1.2";
+      monitor = ",2560x1440@165,auto,1.25";
 
       "$mainMod" = "SUPER";
       "$terminal" = "ghostty";
