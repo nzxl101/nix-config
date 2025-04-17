@@ -6,7 +6,7 @@
     environment.systemPackages = with pkgs; [
         home-manager
         git
-        bashtop
+        btop
         curl
         neovim
         nix-output-monitor
