@@ -6,5 +6,6 @@
     ./timezone.nix
     ./nix.nix
     ./audio.nix
+    ./hyprland.nix
   ];
 }
