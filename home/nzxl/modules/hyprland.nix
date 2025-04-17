@@ -17,7 +17,7 @@
       "$terminal" = "ghostty";
       "$browser" = "brave";
       "$fileBrowser" = "$terminal -e sh -c 'yazi'";
-      "$launcher" = "tofi-drun --drun-launch=true"
+      "$launcher" = "tofi-drun --drun-launch=true";
 
       bind = [
         # Kill active window
