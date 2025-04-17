@@ -10,12 +10,13 @@
         configDir = "~/nix-config";
         currentUser = config.home.username;
       in {
-        "rebuild" = "sudo nixos-rebuild switch --flake ${configDir}#$(hostname)";
+        "pull" = "(cd ${configDir} && git pull --rebase)";
+        "rebuild" = "home-manager switch --flake ${configDir}#${currentUser} && sudo nixos-rebuild switch --flake ${configDir}#$(hostname)";
         "update" = "nix flake update ${configDir} && sudo nixos-rebuild switch --flake ${configDir}#$(hostname)";
-        "gc" = "nix-collect-garbage -d";
-        "hs" = "home-manager switch --flake ${configDir}#${currentUser}";
+        "cleanup" = "nix-collect-garbage -d";
 
         "ll" = "ls -l";
+        ".." = "cd ..";
       };
 
     history.size = 10000;

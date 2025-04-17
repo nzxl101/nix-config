@@ -16,7 +16,7 @@
       "$mainMod" = "SUPER";
       "$terminal" = "ghostty";
       "$browser" = "brave";
-      "$fileExplorer" = "thunar";
+      "$fileExplorer" = "yazi";
       "$launcher" = "tofi-drun --drun-launch=true";
 
       bind = [
