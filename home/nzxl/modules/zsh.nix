@@ -11,7 +11,8 @@
         currentUser = config.home.username;
       in {
         "pull" = "(cd ${configDir} && git pull --rebase)";
-        "rebuild" = "home-manager switch --flake ${configDir}#${currentUser} && sudo nixos-rebuild switch --flake ${configDir}#$(hostname)";
+        "rebuild-home" = "home-manager switch --flake ${configDir}#${currentUser}";
+        "rebuild-system" = "sudo nixos-rebuild switch --flake ${configDir}#$(hostname)";
         "update" = "nix flake update ${configDir} && sudo nixos-rebuild switch --flake ${configDir}#$(hostname)";
         "cleanup" = "nix-collect-garbage -d";
 
