@@ -5,5 +5,6 @@
     grimblast
     playerctl
     brightnessctl
+    polychromatic
   ];
 }
