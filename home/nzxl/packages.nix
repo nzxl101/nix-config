@@ -6,5 +6,6 @@
     playerctl
     brightnessctl
     polychromatic
+    pavucontrol
   ];
 }
