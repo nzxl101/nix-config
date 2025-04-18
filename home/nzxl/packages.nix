@@ -7,5 +7,6 @@
     brightnessctl
     polychromatic
     pavucontrol
+    git-credential-manager
   ];
 }
