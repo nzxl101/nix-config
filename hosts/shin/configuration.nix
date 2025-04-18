@@ -10,5 +10,11 @@
   users.users.${primaryUser} = { extraGroups = [ "openrazer" ]; };
   services.tlp.enable = true;
 
-  # TODO: Nvidia Optimus/AMD iGPU Switch
+  hardware.nvidia.enable = true;
+  hardware.nvidia.prime = {
+    sync.enable = true;
+    amdGpuBusId = "PCI:04:00:0";
+    nvidiaBusId = "PCI:01:00:0";
+    offload.enable = true;
+  };
 }
