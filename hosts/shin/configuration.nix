@@ -13,7 +13,7 @@
   hardware.nvidia.enable = true;
   hardware.nvidia.prime = {
     sync.enable = true;
-    amdGpuBusId = "PCI:04:00:0";
+    amdgpuBusId = "PCI:04:00:0";
     nvidiaBusId = "PCI:01:00:0";
     offload.enable = true;
   };
