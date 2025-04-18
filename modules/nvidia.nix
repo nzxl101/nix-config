@@ -2,15 +2,17 @@
     options.hardware.nvidia.enable = lib.mkEnableOption "Enable Nvidia drivers";
 
     config = lib.mkIf config.hardware.nvidia.enable {
-        services.xserver.videoDrivers = [ "nvidia"];
+        services.xserver.videoDrivers = [ "nvidia" ];
 
-        hardware.nvidia.modesetting.enable = true;
-        hardware.nvidia.powerManagement.enable = true;
-        hardware.opengl = {
-          enable = true;
-          driSupport = true;
-          driSupport32Bit = true;
+        hardware.nvidia = {
+          open = true;
+          modesetting.enable = true;
+          powerManagement.enable = true;
+          powerManagement.finegrained = true;
+          nvidiaSettings = true;
+          package = config.boot.kernelPackages.nvidiaPackages.stable;
         };
+        hardware.opengl.enable = true;
 
         users.users.${primaryUser}.extraGroups = [ "video" ];
 
