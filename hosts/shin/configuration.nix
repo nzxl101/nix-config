@@ -11,6 +11,7 @@
   services.tlp.enable = true;
 
   hardware.nvidia.enable = true;
+  hardware.nvidia.dynamicBoost.enable = true;
   hardware.nvidia.prime = {
     offload = {
       enable = true;
