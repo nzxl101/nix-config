@@ -8,5 +8,6 @@
     ./audio.nix
     ./hyprland.nix
     ./home-manager.nix
+    ./nvidia.nix
   ];
 }
