@@ -42,6 +42,7 @@
       "$mainMod" = "SUPER";
       "$terminal" = "ghostty";
       "$browser" = "brave";
+      "$editor" = "code";
       "$fileBrowser" = "$terminal -e sh -c 'yazi'";
       "$launcher" = "tofi-drun --drun-launch=true";
       "$screenshotFull" = "grimblast --notify --freeze copysave screen";
@@ -51,6 +52,8 @@
         # Kill active window
         "$mainMod, Q, killactive"
 
+        # Launch code editor
+        "$mainMod, C, exec, $editor"
         # Launch file browser
         "$mainMod, E, exec, $fileBrowser"
         # Launch terminal
