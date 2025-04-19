@@ -9,5 +9,6 @@
     ./yazi.nix
     ./tofi.nix
     ./starship.nix
+    ./fastfetch.nix
   ];
 }
