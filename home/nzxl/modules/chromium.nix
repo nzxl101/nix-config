@@ -3,6 +3,9 @@
     enable = true;
     package = brave;
     extensions = [];
-    commandLineArgs = [];
+    commandLineArgs = [
+      "--ozone-platform-hint=auto"
+      "--enable-features=TouchpadOverscrollHistoryNavigation"
+    ];
   };
 }

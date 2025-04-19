@@ -15,6 +15,12 @@
                 then ",2560x1440@165,auto,1.25"
                 else ",1920x1080@165,auto,1";
 
+      input = {
+        touchpad = {
+          natural_scroll = true
+        }
+      };
+
       "$mainMod" = "SUPER";
       "$terminal" = "ghostty";
       "$browser" = "brave";
