@@ -17,7 +17,7 @@
                 then ",2560x1440@165,auto,1.25"
                 else ",1920x1080@165,auto,1";
 
-      xwayland {
+      xwayland = {
         force_zero_scaling = true;
       };
 
