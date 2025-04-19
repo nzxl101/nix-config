@@ -1,4 +1,4 @@
-{ lib, primaryUser, ... }: {
+{ config, lib, primaryUser, ... }: {
   programs.vscode = {
     enable = true;
   };
