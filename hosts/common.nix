@@ -10,4 +10,19 @@
         git
         nix-output-monitor
     ];
+    fonts.fonts = with pkgs; [
+        dejavu_fonts
+        jetbrains-mono
+        noto-fonts
+        noto-fonts-cjk-sans
+        noto-fonts-emoji
+        font-awesome
+        fira
+        fira-code
+        fira-code-symbols
+        liberation_ttf
+        libertine
+        source-serif-pro
+        (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    ];
 }
