@@ -20,8 +20,8 @@
       "$browser" = "brave";
       "$fileBrowser" = "$terminal -e sh -c 'yazi'";
       "$launcher" = "tofi-drun --drun-launch=true";
-      "$screenshotFull" = "grimblast --notify --cursor copysave screen";
-      "$screenshotArea" = "grimblast --notify --cursor copysave area";
+      "$screenshotFull" = "grimblast --notify --freeze copysave screen";
+      "$screenshotArea" = "grimblast --notify --freeze copysave area";
 
       bind = [
         # Kill active window
