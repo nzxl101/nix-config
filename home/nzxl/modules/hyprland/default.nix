@@ -7,6 +7,7 @@
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
+        "XDG_THEME,dark"
         "QT_QPA_PLATFORM,wayland"
         "XDG_SCREENSHOTS_DIR,$HOME/Pictures/Screenshots"
         "GDK_SCALE,2"
