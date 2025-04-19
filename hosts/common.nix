@@ -9,6 +9,7 @@
         curl
         git
         nix-output-monitor
+        powertop
     ];
     fonts.packages = with pkgs; [
         dejavu_fonts
