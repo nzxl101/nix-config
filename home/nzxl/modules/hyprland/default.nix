@@ -18,7 +18,7 @@
       input = {
         touchpad = {
           natural_scroll = true
-        }
+        };
       };
 
       "$mainMod" = "SUPER";
