@@ -10,7 +10,7 @@
   users.users.${primaryUser} = { extraGroups = [ "openrazer" "plugdev" ]; };
 
   services.tlp.enable = true;
-  powerManagement.powertop.enable = true;
+  # powerManagement.powertop.enable = true;
 
   hardware.nvidia.enable = true;
   hardware.nvidia.dynamicBoost.enable = true;
