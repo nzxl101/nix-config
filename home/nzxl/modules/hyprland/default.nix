@@ -9,11 +9,17 @@
         "XDG_SESSION_DESKTOP,Hyprland"
         "QT_QPA_PLATFORM,wayland"
         "XDG_SCREENSHOTS_DIR,$HOME/Pictures/Screenshots"
+        "GDK_SCALE,2"
+        "XCURSOR_SIZE,32"
       ];
 
       monitor = if hostName == "shin"
                 then ",2560x1440@165,auto,1.25"
                 else ",1920x1080@165,auto,1";
+
+      xwayland {
+        force_zero_scaling = true;
+      };
 
       input = {
         touchpad = {
