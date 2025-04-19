@@ -52,6 +52,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
         inherit inputs homeStateVersion primaryUser;
+        inherit (config.networking) hostName;
       };
       modules = [
         ./home/${primaryUser}/home.nix

@@ -1,4 +1,4 @@
-{
+{ hostName, ... }: {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -11,33 +11,40 @@
         "XDG_SCREENSHOTS_DIR,$HOME/Pictures/Screenshots"
       ];
 
-      monitor = ",2560x1440@165,auto,1.25";
+      monitor = if hostName == "shin"
+                then ",2560x1440@165,auto,1.25"
+                else ",1920x1080@165,auto,1";
 
       "$mainMod" = "SUPER";
       "$terminal" = "ghostty";
       "$browser" = "brave";
       "$fileBrowser" = "$terminal -e sh -c 'yazi'";
       "$launcher" = "tofi-drun --drun-launch=true";
+      "$screenshotFull" = "grimblast --notify --cursor copysave screen";
+      "$screenshotArea" = "grimblast --notify --cursor copysave area";
 
       bind = [
         # Kill active window
-        "$mainMod SHIFT, Q, killactive"
+        "$mainMod, Q, killactive"
 
         # Launch file browser
-        "$mainMod SHIFT, E, exec, $fileBrowser"
+        "$mainMod, E, exec, $fileBrowser"
         # Launch terminal
-        "$mainMod SHIFT, RETURN, exec, $terminal"
+        "$mainMod, RETURN, exec, $terminal"
         # Launch browser
-        "$mainMod SHIFT, F, exec, $browser"
+        "$mainMod, F, exec, $browser"
         # Launcher
-        "$mainMod SHIFT, D, exec, $launcher"
+        "$mainMod, D, exec, $launcher"
+        # Screenshot
+        "$mainMod, S, exec, $screenshotArea"
+        "$mainMod SHIFT, S, exec, $screenshotFull"
 
         # Toggle floating
-        "$mainMod SHIFT, SPACE, togglefloating"
+        "$mainMod, SPACE, togglefloating"
         # Toggle split
-        "$mainMod SHIFT, Y, togglesplit"
+        "$mainMod, Y, togglesplit"
         # Pin window
-        "$mainMod SHIFT, P, pin"
+        "$mainMod, P, pin"
 
         # Move focused window
         "$mainMod SHIFT, left, movewindow, l"
@@ -64,11 +71,6 @@
         "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
         "$mainMod SHIFT, 4, movetoworkspacesilent, 4"
         "$mainMod SHIFT, 5, movetoworkspacesilent, 5"
-
-        # Screenshot (Full screen)
-        "$mainMod, S, exec, grimblast --notify --cursor copysave screen"
-        # Screenshot (Select region)
-        "$mainMod SHIFT, S, exec, grimblast --notify --cursor copysave area"
       ];
 
       bindm = [

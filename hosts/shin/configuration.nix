@@ -7,7 +7,7 @@
   system.stateVersion = stateVersion;
 
   hardware.openrazer.enable = true;
-  users.users.${primaryUser} = { extraGroups = [ "openrazer" ]; };
+  users.users.${primaryUser} = { extraGroups = [ "openrazer" "plugdev" ]; };
   services.tlp.enable = true;
 
   hardware.nvidia.enable = true;
