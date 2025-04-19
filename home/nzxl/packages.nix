@@ -7,7 +7,7 @@
     brightnessctl
     pavucontrol
     git-credential-manager
-  ] ++ lib.mkIf (hostName == "shin") [
+  ] ++ lib.optionals (hostName == "shin") [
     # Razer controller
     polychromatic
   ];
