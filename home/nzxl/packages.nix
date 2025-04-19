@@ -7,6 +7,13 @@
     brightnessctl
     pavucontrol
     git-credential-manager
+
+    # Libs
+    libsForQt5.xwaylandvideobridge
+    libnotify
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
+
   ] ++ lib.optionals (hostName == "shin") [
     # Razer controller
     polychromatic
