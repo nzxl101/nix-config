@@ -48,15 +48,18 @@
         };
       }) {} hosts;
 
-    homeConfigurations.${primaryUser} = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
-      extraSpecialArgs = {
-        inherit inputs homeStateVersion primaryUser;
-        inherit (config.networking) hostName;
+    homeConfigurations = builtins.listToAttrs (map (host: {
+      name = "${primaryUser}@${host.hostname}";
+      value = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = {
+          inherit inputs homeStateVersion primaryUser;
+          hostName = host.hostname;
+        };
+        modules = [
+          ./home/${primaryUser}/home.nix
+        ];
       };
-      modules = [
-        ./home/${primaryUser}/home.nix
-      ];
-    };
+    }) hosts);
   };
 }
