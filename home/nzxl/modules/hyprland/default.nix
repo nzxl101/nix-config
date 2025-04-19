@@ -1,4 +1,4 @@
-{ hostName, ... }: {
+{ lib, hostName, ... }: {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -12,6 +12,8 @@
         "XDG_SCREENSHOTS_DIR,$HOME/Pictures/Screenshots"
         "GDK_SCALE,2"
         "XCURSOR_SIZE,32"
+      ] ++ lib.optionals (hostName == "shin") [
+        "AQ_DRM_DEVICES,/dev/dri/card1"
       ];
 
       monitor = if hostName == "shin"
