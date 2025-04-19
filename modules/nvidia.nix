@@ -12,7 +12,7 @@
           nvidiaSettings = true;
           package = config.boot.kernelPackages.nvidiaPackages.stable;
         };
-        hardware.opengl.enable = true;
+        hardware.graphics.enable = true;
 
         users.users.${primaryUser}.extraGroups = [ "video" ];
 

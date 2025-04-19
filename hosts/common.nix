@@ -23,6 +23,7 @@
         liberation_ttf
         libertine
         source-serif-pro
-        (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.symbols-only
     ];
 }
