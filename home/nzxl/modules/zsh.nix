@@ -30,8 +30,8 @@
       fi
 
       # Wayland session
-      if uwsm check may-start > /dev/null && uwsm select; then
-        exec systemd-cat -t uwsm_start uwsm start default
+      if uwsm check may-start > /dev/null; then
+        exec systemd-cat -t uwsm_start uwsm start hyprland.desktop
 
         # Set rgb colors for laptop
         if [ "$(hostname)" = "shin" ]; then
