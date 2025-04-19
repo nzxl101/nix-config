@@ -16,6 +16,10 @@
         "AQ_DRM_DEVICES,/dev/dri/card1"
       ];
 
+      general = {
+        layout = "master";
+      };
+
       monitor = if hostName == "shin"
                 then ",2560x1440@165,auto,1.6"
                 else ",1920x1080@165,auto,1";
