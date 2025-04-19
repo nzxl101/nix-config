@@ -10,5 +10,6 @@
     ./tofi.nix
     ./starship.nix
     ./fastfetch.nix
+    ./vscode.nix
   ];
 }
