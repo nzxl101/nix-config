@@ -1,5 +1,5 @@
 {
-  programs.tofi = {
+  programs.wofi = {
     enable = true;
     settings = {};
   };

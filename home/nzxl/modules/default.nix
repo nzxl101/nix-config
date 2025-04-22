@@ -7,7 +7,7 @@
     ./ghostty.nix
     ./hyprland
     ./yazi.nix
-    ./tofi.nix
+    ./wofi.nix
     ./starship.nix
     ./fastfetch.nix
     ./vscode
