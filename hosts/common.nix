@@ -10,6 +10,7 @@
         git
         nix-output-monitor
         powertop
+        speedtest-cli
     ];
     fonts.packages = with pkgs; [
         dejavu_fonts
