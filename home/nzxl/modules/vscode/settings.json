@@ -13,6 +13,7 @@
 
     // Terminal Profile
     "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.defaultProfile.linux": "bash",
 
     // Cosmetic
     "workbench.activityBar.location": "top",
