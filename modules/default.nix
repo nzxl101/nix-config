@@ -9,5 +9,6 @@
     ./hyprland.nix
     ./home-manager.nix
     ./nvidia.nix
+    ./rdp.nix
   ];
 }
