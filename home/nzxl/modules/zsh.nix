@@ -24,6 +24,9 @@
     history.path = "${config.xdg.dataHome}/zsh/history";
 
     initExtra = ''
+      bindkey "^[[1;5D" backward-word
+      bindkey "^[[1;5C" forward-word
+
       # Tmux session
       if [ -z "$TMUX" ] && [ -n "$DISPLAY" ]; then
         tmux attach-session -t default || tmux new-session -s default
