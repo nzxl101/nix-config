@@ -1,0 +1,100 @@
+{
+    // Disable BS
+    "workbench.startupEditor": "none",
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "editor.minimap.enabled": false,
+    "breadcrumbs.filePath": "off",
+    "explorer.compactFolders": false,
+    "editor.stickyScroll.enabled": false,
+    "notebook.stickyScroll.enabled": false,
+    "terminal.integrated.stickyScroll.enabled": false,
+    "workbench.tree.enableStickyScroll": false,
+
+    // Terminal Profile
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+
+    // Cosmetic
+    "workbench.activityBar.location": "top",
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorStyle": "line",
+    "workbench.colorTheme": "Asuka Theme Darker",
+    "editor.fontSize": 15,
+    "editor.fontFamily": "JetBrains Mono",
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontFamily": "JetBrains Mono",
+    "scm.inputFontFamily": "JetBrains Mono",
+    "workbench.iconTheme": "catppuccin-latte",
+
+    // Formatting
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.resolveGlobalModules": true,
+    "prettier.enable": true,
+    "prettier.endOfLine": "auto",
+    "prettier.singleQuote": false,
+    "prettier.trailingComma": "es5",
+    "prettier.bracketSameLine": true,
+    "prettier.bracketSpacing": true,
+    "prettier.quoteProps": "as-needed",
+    "prettier.tabWidth": 4,
+    "prettier.semi": true,
+    "prettier.printWidth": 1000,
+    "prettier.htmlWhitespaceSensitivity": "ignore",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "files.trimTrailingWhitespace": true,
+    "editor.tabSize": 2,
+    "editor.linkedEditing": true,
+    "typescript.suggest.paths": false,
+    "javascript.suggest.paths": false,
+
+    // Files
+    "files.associations": {
+        "*.ejs": "html",
+        ".env*": "env"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "keyword.other.dotenv",
+                "settings": {
+                    "foreground": "#FF000000"
+                }
+            }
+        ]
+    },
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false
+    },
+
+    // RUST
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer",
+        "editor.formatOnSave": true
+    },
+    "rust-analyzer.diagnostics.disabled": ["unlinked-file"],
+
+    // CPP
+    "C_Cpp.default.includePath": ["C:\\Users\\nzxl\\AppData\\Local\\node-gyp\\Cache\\20.15.0\\include\\node", "C:\\Program Files\\nodejs\\node_modules\\node-addon-api", "C:\\MinGW\\include"],
+    "C_Cpp.default.cppStandard": "c++14",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\gcc.exe",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.errorSquiggles": "disabled",
+
+    // Misc
+    "git.autofetch": true,
+    "git.autofetchPeriod": 30,
+    "gitlens.debug": false,
+    "gitlens.outputLevel": "silent",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "remote.SSH.remotePlatform": {
+        "192.168.178.150": "linux",
+        "192.168.178.173": "linux"
+    },
+    "discord.removeLowerDetails": true,
+    "workbench.editor.enablePreview": false,
+    "git.openRepositoryInParentFolders": "never",
+    "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/docker.exe"
+}

@@ -32,6 +32,8 @@
         touchpad = {
           natural_scroll = true;
         };
+        accel_profile = "flat";
+        sensitivity = "-0.2";
       };
 
       windowrulev2 = [

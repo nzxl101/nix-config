@@ -6,14 +6,20 @@
   networking.hostName = hostname;
   system.stateVersion = stateVersion;
 
+  # This is needed to prevent the iGPU from crashing (Thanks, Razer)
   boot.kernelParams = [
     "amdgpu.dc=1"
     "amdgpu.runpm=0"
   ];
 
+  # Sunshine
+  services.rdp.enable = true;
+
+  # RGB Controller
   hardware.openrazer.enable = true;
   users.users.${primaryUser} = { extraGroups = [ "openrazer" "plugdev" ]; };
 
+  # Power Management
   services.tlp = {
     enable = true;
     settings = {
@@ -27,6 +33,7 @@
   services.power-profiles-daemon.enable = false;
   services.thermald.enable = true;
 
+  # Hybrid Graphics
   hardware.nvidia.enable = true;
   hardware.nvidia.dynamicBoost.enable = true;
   hardware.nvidia.prime = {
