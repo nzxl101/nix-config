@@ -12,6 +12,10 @@
       url = "github:nix-community/disko/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
@@ -35,6 +39,7 @@
         primaryUser = user;
       };
       modules = [
+        ./cachix.nix
         ./hosts/common.nix
         ./hosts/${hostname}/configuration.nix
       ] ++ nixpkgs.lib.optionals (hostname == "shin") [
