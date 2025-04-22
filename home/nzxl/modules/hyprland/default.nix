@@ -52,7 +52,7 @@
       "$browser" = "brave";
       "$editor" = "code";
       "$fileBrowser" = "$terminal -e sh -c 'yazi'";
-      "$launcher" = "rofi -show-icons -show drun";
+      "$launcher" = "walker";
       "$screenshotFull" = "grimblast --notify --freeze copysave screen";
       "$screenshotArea" = "grimblast --notify --freeze copysave area";
 
