@@ -6,6 +6,11 @@
   networking.hostName = hostname;
   system.stateVersion = stateVersion;
 
+  boot.kernelParams = [
+    "amdgpu.dc=1"
+    "amdgpu.runpm=0"
+  ];
+
   hardware.openrazer.enable = true;
   users.users.${primaryUser} = { extraGroups = [ "openrazer" "plugdev" ]; };
 
