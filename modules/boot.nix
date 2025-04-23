@@ -12,7 +12,5 @@
     "udev.log_priority=3"
     "rd.systemd.show_status=auto"
   ];
-  boot.plymouth = {
-    enable = true;
-  };
+  boot.plymouth.enable = true;
 }
