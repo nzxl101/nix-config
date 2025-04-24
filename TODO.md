@@ -1,5 +1,3 @@
--   **Bluetooth**
-    -   Toggleable
 -   **Audio**
     -   Fix Pipewire Stutters
     -   Set fixed buffer size

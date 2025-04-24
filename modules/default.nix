@@ -10,5 +10,6 @@
     ./home-manager.nix
     ./nvidia.nix
     ./rdp.nix
+    ./bluetooth.nix
   ];
 }
