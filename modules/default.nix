@@ -11,5 +11,6 @@
     ./nvidia.nix
     ./rdp.nix
     ./bluetooth.nix
+    ./env.nix
   ];
 }
