@@ -1,7 +1,3 @@
--   **Audio**
-    -   Fix Pipewire Stutters
-    -   Set fixed buffer size
-    -   EasyEffects EQ
 -   **Waybar**
     -   Layout (Left-Right)
         -   RZR Logo/NixOS Logo

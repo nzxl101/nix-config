@@ -11,5 +11,6 @@
     ./starship.nix
     ./fastfetch.nix
     ./vscode
+    ./easyeffects
   ];
 }
