@@ -232,5 +232,5 @@
       };
     };
   };
-  services.easyeffects.preset = "bladeEQ";
+  services.easyeffects.preset = lib.mkIf (hostName == "shin") "bladeEQ";
 }
