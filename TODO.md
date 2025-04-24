@@ -2,9 +2,6 @@
     -   Fix Pipewire Stutters
     -   Set fixed buffer size
     -   EasyEffects EQ
--   **ENV**
-    -   Define a file with common env variables (.local/bin $PATH, etc.)
-    -   Add nvidia-offload to $PATH
 -   **Waybar**
     -   Layout (Left-Right)
         -   RZR Logo/NixOS Logo
