@@ -27,4 +27,5 @@
         nerd-fonts.jetbrains-mono
         nerd-fonts.symbols-only
     ];
+    services.dbus.enable = true;
 }

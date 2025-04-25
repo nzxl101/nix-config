@@ -6,18 +6,14 @@
   networking.hostName = hostname;
   system.stateVersion = stateVersion;
 
-  # This is needed to prevent the iGPU from crashing (Thanks, Razer)
-  boot.kernelParams = [
-    "amdgpu.dc=1"
-    "amdgpu.runpm=0"
-  ];
-
   # Sunshine
   services.rdp.enable = true;
 
   # RGB Controller
   hardware.openrazer.enable = true;
-  users.users.${primaryUser} = { extraGroups = [ "openrazer" "plugdev" ]; };
+
+  # Groups
+  users.users.${primaryUser} = { extraGroups = [ "openrazer" "plugdev" "corectrl" ]; };
 
   # Power Management
   services.tlp = {
@@ -43,5 +39,14 @@
     };
     amdgpuBusId = "PCI:04:00:0";
     nvidiaBusId = "PCI:01:00:0";
+  };
+
+  # AMDGPU
+  programs.corectrl = {
+    enable = true;
+    gpuOverclock = {
+      enable = true;
+      ppfeaturemask = "0xffffffff";
+    };
   };
 }
