@@ -10,7 +10,7 @@
 -   **QT/GTK Styling (STYLIX?)**
     -   Dark Theme preferably
     -   Catpuccin Icons
-    -   Color Palette: #B02A3B, #E6773E, #F2A850, #65B04B, #6D7290
+    -   Color Palette: #B02A3B, #E6773E, #F2A850, #65B04B, #6D7290, #191919
 -   **Walker**
     -   Add Emoji, Color Picker, Window Switcher
     -   Change theme
@@ -20,7 +20,7 @@
     -   Add SUPER+L for Locking session
     -   Idle after 15 minutes
     -   <a href="./wallpaper.jpeg">Wallpaper</a>
-    -   Color Palette: #B02A3B, #E6773E, #F2A850, #65B04B, #6D7290
+    -   Color Palette: #B02A3B, #E6773E, #F2A850, #65B04B, #6D7290, #191919
     -   Black cursor
 -   **WL Clipboard**
 -   **Ghostty/Tmux/Starship**

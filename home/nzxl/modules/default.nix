@@ -12,5 +12,6 @@
     ./fastfetch.nix
     ./vscode
     ./easyeffects
+    ./waybar
   ];
 }
