@@ -10,6 +10,10 @@
     brightnessctl
     pavucontrol
     git-credential-manager
+    wofi-power-menu
+    wl-clipboard
+    cliphist
+    microfetch
 
     # Libs
     libsForQt5.xwaylandvideobridge
@@ -21,4 +25,6 @@
     # Razer controller
     polychromatic
   ];
+  # NM Applet
+  services.network-manager-applet.enable = true;
 }

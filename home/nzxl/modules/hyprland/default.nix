@@ -1,4 +1,10 @@
 { lib, hostName, ... }: {
+  imports = [
+    ./hyprpaper.nix
+    ./hypridle.nix
+    ./hyprlock.nix
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -16,8 +22,50 @@
         "AQ_DRM_DEVICES,/dev/dri/card1"
       ];
 
+      exec-once = [
+        "waybar"
+        "wl-paste --type text --watch cliphist store"
+        "wl-paste --type image --watch cliphist store"
+      ];
+
       general = {
+        gaps_in = 4;
+        gaps_out = 10;
+
+        border_size = 1;
+
+        "col.active_border" = "rgba(313244ff) rgba(585b70ff) 45deg";
+        "col.inactive_border" = "rgba(1e1e2eff)";
+
+        resize_on_border = true;
+
+        allow_tearing = false;
+
         layout = "master";
+      };
+
+      decoration = {
+        rounding = 1;
+
+        active_opacity = 0.98;
+        inactive_opacity = 0.8;
+
+        shadow = {
+          enabled = true;
+        };
+
+        blur = {
+          enabled = true;
+        };
+      };
+
+      animations = {
+        enabled = true;
+      };
+
+      misc = {
+        force_default_wallpaper = 0;
+        disable_hyprland_logo = true;
       };
 
       monitor = if hostName == "shin"
@@ -52,13 +100,19 @@
       "$browser" = "brave";
       "$editor" = "code";
       "$fileBrowser" = "$terminal -e sh -c 'yazi'";
-      "$launcher" = "walker";
+      "$launcher" = "wofi";
       "$screenshotFull" = "grimblast --notify --freeze copysave screen";
       "$screenshotArea" = "grimblast --notify --freeze copysave area";
 
       bind = [
         # Kill active window
         "$mainMod, Q, killactive"
+        # Lock
+        "$mainMod, L, exec, loginctl lock-session"
+        # Clipboard
+        "$mainMod, V, exec, cliphist list | $launcher --dmenu | cliphist decode | wl-copy"
+        # Emoji
+        "$mainMod, X, exec, bemoji -cn"
 
         # Launch code editor
         "$mainMod, C, exec, $editor"
@@ -69,7 +123,7 @@
         # Launch browser
         "$mainMod, F, exec, $browser"
         # Launcher
-        "$mainMod, D, exec, $launcher"
+        "$mainMod, D, exec, $launcher --show drun"
         # Screenshot
         "$mainMod, S, exec, $screenshotArea"
         "$mainMod SHIFT, S, exec, $screenshotFull"

@@ -1,32 +1,7 @@
--   **Waybar**
-    -   Layout (Left-Right)
-        -   RZR Logo/NixOS Logo
-        -   Workspaces 1-5
-        -   Tray (Battery, WiFi/LAN, Audio, DateTime)
-        -   Notification Center
-        -   Logout/Power Off
--   **Notification Center (SWAYNC)**
-    -   Overlays (Brightness, Volume, etc.)
--   **QT/GTK Styling (STYLIX?)**
-    -   Dark Theme preferably
-    -   Catpuccin Icons
-    -   Color Palette: #B02A3B, #E6773E, #F2A850, #65B04B, #6D7290, #191919
--   **Walker**
-    -   Add Emoji, Color Picker, Window Switcher
-    -   Change theme
--   **Yazi**
-    -   Change theme
--   **Hyprland/Hyprlock/Hyprpaper/Hypridle/Hyprpicker**
-    -   Add SUPER+L for Locking session
-    -   Idle after 15 minutes
-    -   <a href="./wallpaper.jpeg">Wallpaper</a>
-    -   Color Palette: #B02A3B, #E6773E, #F2A850, #65B04B, #6D7290, #191919
-    -   Black cursor
--   **WL Clipboard**
--   **Ghostty/Tmux/Starship**
-    -   General customizations and keybindings
--   **Font rendering**
-    -   Works pretty nice out of the box, just need to change the default font
+-   **Misc**
+    -   Emoji/Color Picker
+    -   Window Switcher
+    -   Rounding on some windows is weird
 -   **Battery Tweaks**
     -   Getting somewhere around 3-4 hours, that's not great.
     -   Goal is 7 hours for browsing/coding and 2 hours of video playback

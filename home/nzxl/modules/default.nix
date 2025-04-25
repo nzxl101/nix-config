@@ -7,11 +7,12 @@
     ./ghostty.nix
     ./hyprland
     ./yazi.nix
-    ./walker.nix
+    ./wofi.nix
     ./starship.nix
-    ./fastfetch.nix
     ./vscode
     ./easyeffects
     ./waybar
+    ./swaync.nix
+    ./stylix.nix
   ];
 }
