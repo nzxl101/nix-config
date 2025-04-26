@@ -1,7 +1,6 @@
 -   **Misc**
     -   Emoji/Color Picker
     -   Window Switcher
-    -   Rounding on some windows is weird
 -   **Battery Tweaks**
     -   Getting somewhere around 3-4 hours, that's not great.
     -   Goal is 7 hours for browsing/coding and 2 hours of video playback
