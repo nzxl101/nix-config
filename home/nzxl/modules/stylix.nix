@@ -11,6 +11,9 @@
       hyprlock.enable = false;
       waybar.enable = false;
       vscode.enable = false;
+      gtk.extraCss = ''
+        * { border-radius: 0px; }
+      '';
     };
 
     cursor = {

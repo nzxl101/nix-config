@@ -3,7 +3,8 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      window-height = 31;
+      window-padding-x = 0;
+      window-padding-y = 0;
     };
   };
 }
