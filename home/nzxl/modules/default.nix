@@ -14,5 +14,6 @@
     ./waybar
     ./swaync.nix
     ./stylix.nix
+    ./btop.nix
   ];
 }
