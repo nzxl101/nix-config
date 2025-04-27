@@ -1,3 +1,5 @@
+-   **Improve Per-Host Settings**
+    -   I don't like the (hostname == "host") stuff. I'll probably add a laptop desktop type to hosts config and toggle settings based on that. Razer specific stuff needs to move into the hosts/shin folder instead of doing it in HM.
 -   **Misc**
     -   Emoji/Color Picker
     -   Window Switcher

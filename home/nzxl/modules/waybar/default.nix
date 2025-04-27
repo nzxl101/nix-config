@@ -1,4 +1,4 @@
-{ config, lib, primaryUser, ... }: {
+{ config, lib, primaryUser, hostName, ... }: {
   programs.waybar = {
     enable = true;
     style = ./style.css;
@@ -8,7 +8,9 @@
         position = "top";
         height = 25;
         modules-left = ["custom/logo" "hyprland/workspaces"];
-        modules-right = ["custom/weather" "pulseaudio" "battery" "clock" "tray" "custom/notification" "custom/power"];
+        modules-right = if hostName == "shin"
+                        then ["custom/weather" "pulseaudio" "battery" "clock" "tray" "custom/notification" "custom/power"]
+                        else ["custom/weather" "pulseaudio" "clock" "tray" "custom/notification" "custom/power"];
 
         "custom/logo" = {
           format = "";
@@ -16,7 +18,7 @@
 
         "custom/power" = {
           format = "⏻";
-          on-click = "systemctl poweroff";
+          on-click = "wofi-power-menu";
         };
 
         "hyprland/workspaces" = {

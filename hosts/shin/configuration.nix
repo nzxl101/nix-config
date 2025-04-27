@@ -6,6 +6,11 @@
   networking.hostName = hostname;
   system.stateVersion = stateVersion;
 
+  # Boot Params
+  boot.kernelParams = [
+    "amd_pstate=guided"
+  ];
+
   # Firmware
   hardware.enableRedistributableFirmware = true;
 
@@ -26,6 +31,8 @@
       CPU_BOOST_ON_BAT = 0;
     };
   };
+  powerManagement.enable = true;
+  powerManagement.cpuFreqGovernor = "schedutil";
   powerManagement.powertop.enable = true;
   services.power-profiles-daemon.enable = false;
   services.thermald.enable = true;
