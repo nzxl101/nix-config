@@ -9,6 +9,7 @@
   # Boot Params
   boot.kernelParams = [
     "amd_pstate=guided"
+    "usbcore.autosuspend=-1"
   ];
 
   # Firmware
@@ -19,6 +20,7 @@
 
   # RGB Controller
   hardware.openrazer.enable = true;
+  hardware.openrazer.devicesOffOnScreensaver = false;
 
   # Groups
   users.users.${user} = { extraGroups = [ "openrazer" "plugdev" "corectrl" ]; };
@@ -29,6 +31,8 @@
     settings = {
       CPU_BOOST_ON_AC = 1;
       CPU_BOOST_ON_BAT = 0;
+      KBD_BACKLIGHT_TIMEOUT_AC = 0;
+      KBD_BACKLIGHT_TIMEOUT_BAT = 0;
     };
   };
   powerManagement.enable = true;

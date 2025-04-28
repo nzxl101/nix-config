@@ -35,13 +35,6 @@
       # Wayland session
       if uwsm check may-start > /dev/null; then
         exec systemd-cat -t uwsm_start uwsm start default
-
-        # Set rgb colors for laptop
-        if [ "$(hostname)" = "shin" ]; then
-          exec polychromatic-cli -d laptop -z main -o static -c FF0000
-          exec polychromatic-cli -d laptop -z main -o brightness -p 75
-          exec polychromatic-cli -d laptop -z logo -o brightness -p 1
-        fi
       fi
     '';
   };
