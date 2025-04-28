@@ -48,7 +48,7 @@
 
         "custom/weather" = {
           format = " {} ";
-          exec = "curl -s 'wttr.in/Marburg?format=%c%t'";
+          exec = "curl -s --max-time 5 'wttr.in/Marburg?format=%c%t' || echo 'N/A'";
           interval = 300;
           class = "weather";
         };
