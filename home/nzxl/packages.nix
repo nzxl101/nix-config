@@ -1,26 +1,29 @@
 { lib, hostName, pkgs, pkgs-stable, ... }: {
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
+    # OBS
+    obs-studio
+
     # Cachix
     cachix
 
     # Utils (screenshots, brightness control etc.)
-    grimblast
-    playerctl
     brightnessctl
-    pavucontrol
-    git-credential-manager
-    wofi-power-menu
-    wofi-emoji
-    wl-clipboard
     cliphist
-    microfetch
+    git-credential-manager
+    grimblast
     hyprpicker
     hyprswitch
+    microfetch
+    pavucontrol
+    playerctl
+    wl-clipboard
+    wofi-emoji
+    wofi-power-menu
 
     # Libs
-    libsForQt5.xwaylandvideobridge
     libnotify
+    libsForQt5.xwaylandvideobridge
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
 
