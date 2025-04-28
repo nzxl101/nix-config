@@ -105,6 +105,7 @@ in
         "maxsize 1 1, class:^(xwaylandvideobridge)$"
         "noblur, class:^(xwaylandvideobridge)$"
         "nofocus, class:^(xwaylandvideobridge)$"
+        "workspace special silent, class:^(xwaylandvideobridge)$"
       ];
 
       "$mainMod" = "SUPER";
@@ -126,7 +127,7 @@ in
         # Emoji
         "$mainMod, X, exec, wofi-emoji"
         # Window Switcher
-        "$mainMod, TAB, exec, hyprswitch gui --mod-key super --key tab --max-switch-offset 9 --hide-active-window-border"
+        "$mainMod, TAB, exec, hyprswitch gui --mod-key super --key tab --max-switch-offset 9 --filter-same-class --hide-active-window-border"
 
         # Launch code editor
         "$mainMod, C, exec, $editor"
