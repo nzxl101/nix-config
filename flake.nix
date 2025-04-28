@@ -27,27 +27,28 @@
   let
     system = "x86_64-linux";
     homeStateVersion = "24.11";
-    primaryUser = "nzxl";
+
     hosts = [
-      { hostname = "shin"; stateVersion = "24.11"; user = primaryUser; }
+      { hostname = "shin"; stateVersion = "24.11"; user = "nzxl"; type = "laptop"; }
     ];
 
-    makeSystem = { hostname, stateVersion, user }: nixpkgs.lib.nixosSystem {
+    makeSystem = { hostname, stateVersion, user, type }: nixpkgs.lib.nixosSystem {
       system = system;
       specialArgs = {
         pkgs-stable = import nixpkgs-stable {
           inherit system;
           config.allowUnfree = true;
         };
-        inherit inputs system stateVersion hostname;
-        primaryUser = user;
+        inherit inputs system stateVersion hostname user;
       };
       modules = [
         ./cachix.nix
         ./hosts/common.nix
         ./hosts/${hostname}/configuration.nix
-      ] ++ nixpkgs.lib.optionals (hostname == "shin") [
-        nixos-hardware.nixosModules.common-pc-laptop
+      ] ++ nixpkgs.lib.optionals (type == "laptop") [
+        nixos-hardware.nixosModules.common-pc-laptop-ssd
+      ] ++ nixpkgs.lib.optionals (type == "desktop") [
+        nixos-hardware.nixosModules.common-pc-ssd
       ];
     };
   in
@@ -66,7 +67,8 @@
         extraSpecialArgs = {
           inherit inputs homeStateVersion;
           hostName = host.hostname;
-          primaryUser = host.user;
+          userName = host.user;
+          machineType = host.type;
         };
         modules = [
           ./home/${host.user}/home.nix

@@ -3,7 +3,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 0;
-  boot.initrd.kernelModules = [];
   boot.initrd.verbose = false;
   boot.kernelParams = [
     "quiet"

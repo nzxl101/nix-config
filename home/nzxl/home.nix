@@ -1,12 +1,12 @@
-{ homeStateVersion, primaryUser, ... }: {
+{ homeStateVersion, userName, ... }: {
   imports = [
     ./modules
     ./packages.nix
   ];
 
   home = {
-    username = primaryUser;
-    homeDirectory = "/home/${primaryUser}";
+    username = userName;
+    homeDirectory = "/home/${userName}";
     stateVersion = homeStateVersion;
   };
 }

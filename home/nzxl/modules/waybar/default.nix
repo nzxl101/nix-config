@@ -1,4 +1,4 @@
-{ config, lib, primaryUser, hostName, ... }: {
+{ config, lib, hostName, machineType, ... }: {
   programs.waybar = {
     enable = true;
     style = ./style.css;
@@ -8,9 +8,15 @@
         position = "top";
         height = 25;
         modules-left = ["custom/logo" "hyprland/workspaces"];
-        modules-right = if hostName == "shin"
-                        then ["custom/weather" "pulseaudio" "battery" "clock" "tray" "custom/notification" "custom/power"]
-                        else ["custom/weather" "pulseaudio" "clock" "tray" "custom/notification" "custom/power"];
+        modules-right = [
+          "custom/weather"
+          "pulseaudio"
+        ] ++ (if machineType == "laptop" then [ "battery" ] else [ ]) ++ [
+          "clock"
+          "tray"
+          "custom/notification"
+          "custom/power"
+        ];
 
         "custom/logo" = {
           format = "";

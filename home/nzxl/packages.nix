@@ -25,6 +25,4 @@
     # Razer controller
     polychromatic
   ];
-  # NM Applet
-  services.network-manager-applet.enable = true;
 }

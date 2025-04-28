@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, primaryUser, ... }: {
+{ pkgs, pkgs-stable, ... }: {
     imports = [
         ../modules
     ];

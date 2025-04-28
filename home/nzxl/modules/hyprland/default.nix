@@ -1,4 +1,13 @@
-{ lib, hostName, ... }: {
+{ lib, hostName, ... }:
+let
+  monitors = if hostName == "shin" then [
+    "eDP-1,2560x1440@165,auto,1.6"
+    "HDMI-1,preferred,2560x0,1"
+  ] else [
+    ",1920x1080@165,auto,1"
+  ];
+in
+{
   imports = [
     ./hyprpaper.nix
     ./hypridle.nix
@@ -69,9 +78,7 @@
         disable_hyprland_logo = true;
       };
 
-      monitor = if hostName == "shin"
-                then ",2560x1440@165,auto,1.6"
-                else ",1920x1080@165,auto,1";
+      (builtins.map (monitorStr: { monitor = monitorStr; }) monitors)
 
       xwayland = {
         force_zero_scaling = true;

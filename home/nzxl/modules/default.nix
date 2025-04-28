@@ -15,5 +15,7 @@
     ./swaync.nix
     ./stylix.nix
     ./btop.nix
+    ./network-manager-applet.nix
+    ./env.nix
   ];
 }
