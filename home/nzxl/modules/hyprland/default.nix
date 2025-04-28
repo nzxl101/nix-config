@@ -36,6 +36,7 @@ in
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "corectrl"
+        "hyprswitch init --show-title &"
       ];
 
       general = {
@@ -78,7 +79,7 @@ in
         disable_hyprland_logo = true;
       };
 
-      (builtins.map (monitorStr: { monitor = monitorStr; }) monitors)
+      monitor = monitors;
 
       xwayland = {
         force_zero_scaling = true;
@@ -123,7 +124,9 @@ in
         # Clipboard
         "$mainMod, V, exec, cliphist list | $launcher --dmenu | cliphist decode | wl-copy"
         # Emoji
-        "$mainMod, X, exec, bemoji -cn"
+        "$mainMod, X, exec, wofi-emoji"
+        # Window Switcher
+        "$mainMod, TAB, exec, hyprswitch gui --mod-key $mainMod --key TAB --max-switch-offset 9 --hide-active-window-border"
 
         # Launch code editor
         "$mainMod, C, exec, $editor"

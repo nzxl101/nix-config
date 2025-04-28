@@ -56,7 +56,7 @@
     nixosConfigurations = nixpkgs.lib.foldl' (configs: host:
       configs // {
         "${host.hostname}" = makeSystem {
-          inherit (host) hostname stateVersion user;
+          inherit (host) hostname stateVersion user type;
         };
       }) {} hosts;
 

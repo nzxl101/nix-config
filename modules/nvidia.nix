@@ -1,4 +1,4 @@
-{ config, pkgs, lib, userName, ... }: {
+{ config, pkgs, lib, user, ... }: {
     options.hardware.nvidia.enable = lib.mkEnableOption "Enable Nvidia drivers";
 
     config = lib.mkIf config.hardware.nvidia.enable {
@@ -14,7 +14,7 @@
         };
         hardware.graphics.enable = true;
 
-        users.users.${userName}.extraGroups = [ "video" ];
+        users.users.${user}.extraGroups = [ "video" ];
 
         environment.sessionVariables = {
           GBM_BACKEND = "nvidia-drm";

@@ -1,9 +1,9 @@
-{ pkgs, userName, stateVersion, hostName, ... }: {
+{ pkgs, stateVersion, hostname, user, ... }: {
   imports = [
     ./hardware-configuration.nix
     ./packages.nix
   ];
-  networking.hostName = hostName;
+  networking.hostName = hostname;
   system.stateVersion = stateVersion;
 
   # Boot Params
@@ -21,7 +21,7 @@
   hardware.openrazer.enable = true;
 
   # Groups
-  users.users.${userName} = { extraGroups = [ "openrazer" "plugdev" "corectrl" ]; };
+  users.users.${user} = { extraGroups = [ "openrazer" "plugdev" "corectrl" ]; };
 
   # Power Management
   services.tlp = {

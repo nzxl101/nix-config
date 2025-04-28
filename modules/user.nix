@@ -1,13 +1,13 @@
-{ pkgs, userName, ... }: {
+{ pkgs, user, ... }: {
   programs.zsh.enable = true;
 
   users = {
     defaultUserShell = pkgs.zsh;
-    users.${userName} = {
+    users.${user} = {
       isNormalUser = true;
       extraGroups = [ "networkmanager" "wheel" "input" ];
     };
   };
 
-  services.getty.autologinUser = userName;
+  services.getty.autologinUser = user;
 }

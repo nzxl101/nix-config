@@ -11,9 +11,12 @@
     pavucontrol
     git-credential-manager
     wofi-power-menu
+    wofi-emoji
     wl-clipboard
     cliphist
     microfetch
+    hyprpicker
+    hyprswitch
 
     # Libs
     libsForQt5.xwaylandvideobridge
