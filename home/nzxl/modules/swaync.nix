@@ -1,10 +1,10 @@
-{
+{ lib, ... }: {
   services.swaync = {
     enable = true;
     settings = {
       positionX = "right";
       positionY = "top";
-      control-center-radius = 1;
+      control-center-margin-top = 5;
       fit-to-screen = true;
       layer-shell = true;
       layer = "overlay";

@@ -12,7 +12,27 @@
       waybar.enable = false;
       vscode.enable = false;
       gtk.extraCss = ''
-        * { border-radius: 0px; }
+        window.background,
+        window.maximized,
+        window.dialog,
+        window.message,
+        window.csd {
+          border-radius: 0;
+        }
+
+        messagedialog.background,
+        messagedialog.maximized,
+        messagedialog.dialog,
+        messagedialog.message,
+        messagedialog.csd {
+          border-radius: 0;
+        }
+
+        .control-center,
+        .notification-window,
+        .notification {
+          border-radius: 0;
+        }
       '';
     };
 

@@ -22,6 +22,7 @@
     wofi-power-menu
 
     # Libs
+    glib
     libnotify
     libsForQt5.xwaylandvideobridge
     xdg-desktop-portal-gtk
