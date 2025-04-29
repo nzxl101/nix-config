@@ -16,8 +16,16 @@
         window.maximized,
         window.dialog,
         window.message,
-        window.csd {
+        window.csd,
+        #input,
+        #entry,
+        #entry:selected,
+        #outer-box {
           border-radius: 0;
+        }
+
+        #entry:selected {
+          outline: none;
         }
 
         messagedialog.background,
