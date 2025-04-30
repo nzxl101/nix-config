@@ -11,6 +11,7 @@
     ./nvidia.nix
     ./rdp.nix
     ./bluetooth.nix
-    ./env.nix
+    ./battery-tweaks.nix
+    ./disable-dgpu.nix
   ];
 }

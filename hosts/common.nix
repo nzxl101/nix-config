@@ -2,7 +2,9 @@
     imports = [
         ../modules
     ];
+    hardware.enableRedistributableFirmware = true;
     i18n.defaultLocale = "en_US.UTF-8";
+    environment.localBinInPath = true;
     environment.systemPackages = with pkgs; [
         home-manager
         curl

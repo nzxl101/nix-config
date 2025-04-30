@@ -2,7 +2,6 @@
 let
   monitors = if hostName == "shin" then [
     "eDP-1,2560x1440@165,auto,1.6"
-    "HDMI-1,preferred,2560x0,1"
   ] else [
     ",1920x1080@165,auto,1"
   ];
@@ -28,10 +27,9 @@ in
         "GDK_SCALE,2"
         "XCURSOR_SIZE,32"
       ] ++ lib.optionals (hostName == "shin") [
-        "AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card2"
-      ] ++ lib.optionals (machineType != "laptop") [
-        "GBM_BACKEND,nvidia-drm"
-        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+        "AQ_DRM_DEVICES,/dev/dri/card1"
+        "__NV_PRIME_RENDER_OFFLOAD,0"
+        "__GLX_VENDOR_LIBRARY_NAME,mesa"
       ];
 
       exec-once = [

@@ -39,7 +39,7 @@
           inherit system;
           config.allowUnfree = true;
         };
-        inherit inputs system stateVersion hostname user;
+        inherit inputs system stateVersion hostname user type;
       };
       modules = [
         ./cachix.nix
