@@ -5,21 +5,17 @@
         services.xserver.videoDrivers = [ "nvidia" ];
 
         hardware.nvidia = {
-          open = true;
+          open = false;
           modesetting.enable = true;
           powerManagement.enable = true;
           powerManagement.finegrained = true;
           nvidiaSettings = true;
-          package = config.boot.kernelPackages.nvidiaPackages.stable;
+          dynamicBoost.enable = true;
+          package = config.boot.kernelPackages.nvidiaPackages.production;
         };
         hardware.graphics.enable = true;
+        hardware.graphics.enable32Bit = true;
 
         users.users.${user}.extraGroups = [ "video" ];
-
-        environment.sessionVariables = {
-          GBM_BACKEND = "nvidia-drm";
-          __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-          NIXOS_OZONE_WL = "1";
-        };
     };
 }

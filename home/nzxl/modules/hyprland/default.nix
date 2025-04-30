@@ -1,4 +1,4 @@
-{ lib, hostName, ... }:
+{ lib, hostName, machineType, ... }:
 let
   monitors = if hostName == "shin" then [
     "eDP-1,2560x1440@165,auto,1.6"
@@ -28,7 +28,10 @@ in
         "GDK_SCALE,2"
         "XCURSOR_SIZE,32"
       ] ++ lib.optionals (hostName == "shin") [
-        "AQ_DRM_DEVICES,/dev/dri/card1"
+        "AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card2"
+      ] ++ lib.optionals (machineType != "laptop") [
+        "GBM_BACKEND,nvidia-drm"
+        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
       ];
 
       exec-once = [
