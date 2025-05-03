@@ -11,6 +11,7 @@
       hyprlock.enable = false;
       waybar.enable = false;
       vscode.enable = false;
+      wofi.enable = false;
       gtk.extraCss = ''
         window.background,
         window.maximized,

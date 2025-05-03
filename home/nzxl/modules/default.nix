@@ -8,7 +8,7 @@
     ./hyprland
     ./yazi.nix
     ./wofi.nix
-    ./starship.nix
+    ./starship
     ./vscode
     ./easyeffects
     ./waybar

@@ -15,7 +15,7 @@ window#waybar {
 #custom-logo {
     margin: 0;
     margin-right: 5px;
-    margin-left: 5px;
+    margin-left: 0px;
     font-size: 22px;
     padding-right: 16px;
     padding-left: 12px;
