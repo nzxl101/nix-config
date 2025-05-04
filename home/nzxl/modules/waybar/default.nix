@@ -1,4 +1,4 @@
-{ config, lib, hostName, machineType, ... }: {
+{ config, lib, hostName, machineType, userName, ... }: {
   programs.waybar = {
     enable = true;
     style = ./style.css;
@@ -34,11 +34,11 @@
           all-outputs = false;
           format = "{icon}";
           format-icons = {
-            "1" = "";
-            "2" = "";
-            "3" = "";
-            "4" = "";
-            "5" = "";
+            "1" = "1";
+            "2" = "2";
+            "3" = "3";
+            "4" = "4";
+            "5" = "5";
           };
 
           persistent-workspaces = {
@@ -112,4 +112,9 @@
       };
     };
   };
+
+  # For testing purposes, you can symlink the style.css file to the home directory.
+  # home.file."${config.home.homeDirectory}/.config/waybar/style.css".source = lib.mkForce (
+  #   config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/${userName}/modules/waybar/style.css"
+  # );
 }
