@@ -2,8 +2,14 @@
     imports = [
         ../modules
     ];
+
+    # Firmware
     hardware.enableRedistributableFirmware = true;
+
+    # Locale
     i18n.defaultLocale = "en_US.UTF-8";
+
+    # Env
     environment.localBinInPath = true;
     environment.systemPackages = with pkgs; [
         home-manager
@@ -12,6 +18,8 @@
         nix-output-monitor
         powertop
     ];
+
+    # Fonts
     fonts.packages = with pkgs; [
         dejavu_fonts
         jetbrains-mono
@@ -28,5 +36,7 @@
         nerd-fonts.jetbrains-mono
         nerd-fonts.symbols-only
     ];
+
+    # Dbus
     services.dbus.enable = true;
 }
