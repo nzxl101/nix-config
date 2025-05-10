@@ -48,7 +48,7 @@ in
                   "/var/log" = {
                     mountOptions = [ "compress=zstd" "noatime" ];
                     mountpoint = "/var/log";
-                  }
+                  };
                 };
 
                 mountOptions = [ "compress=zstd" "noatime" ];
