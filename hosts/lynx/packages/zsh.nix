@@ -2,7 +2,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    autosuggestion.enable = true;
+    autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
 
     shellAliases =
@@ -19,12 +19,12 @@
         ".." = "cd ..";
       };
 
-    history.size = 10000;
-    history.path = "${config.xdg.dataHome}/zsh/history";
+    # history.size = 10000;
+    # history.path = "${config.xdg.dataHome}/zsh/history";
 
-    initExtra = ''
-      bindkey "^[[1;5D" backward-word
-      bindkey "^[[1;5C" forward-word
-    '';
+    # initExtra = ''
+    #   bindkey "^[[1;5D" backward-word
+    #   bindkey "^[[1;5C" forward-word
+    # '';
   };
 }
