@@ -18,6 +18,11 @@
   # Disable Nvidia dGPU
   hardware.dgpu.disable = true;
 
+  # Bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = false;
+  services.blueman.enable = true;
+
   # Extra Groups
   users.users.${user} = { extraGroups = [ "openrazer" "plugdev" "corectrl" ]; };
 }
