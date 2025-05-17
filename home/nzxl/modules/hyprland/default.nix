@@ -56,6 +56,10 @@ in
         layout = "master";
       };
 
+      render = {
+        explicit_sync = false;
+      };
+
       decoration = {
         rounding = 0;
 
