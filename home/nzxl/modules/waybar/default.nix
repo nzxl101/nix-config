@@ -54,7 +54,7 @@
         };
 
         "pulseaudio" = {
-          format = "{icon} {volume}%";
+          format = "{icon}  {volume}%";
           format-muted = "";
           format-icons = {
             "headphones" = "";
@@ -73,14 +73,14 @@
             warning = 30;
             critical = 1;
           };
-          format = "{icon} {capacity}%";
+          format = "{icon}  {capacity}%";
           format-charging = " {capacity}%";
           format-icons = ["" "" "" "" ""];
           on-click = {};
         };
 
         "clock" = {
-          format = "{:%H:%M - %d.%m.%Y}";
+          format = "󰥔 {:%H:%M - %d.%m.%Y}";
           on-click = {};
         };
 

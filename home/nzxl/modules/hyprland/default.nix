@@ -63,7 +63,7 @@ in
       decoration = {
         rounding = 0;
 
-        active_opacity = 0.98;
+        active_opacity = 0.9;
         inactive_opacity = 0.8;
 
         shadow = {
