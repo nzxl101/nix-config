@@ -18,6 +18,7 @@
 
         "ll" = "ls -l";
         ".." = "cd ..";
+        "bb" = "if [ -n \"$TMUX\" ]; then tmux detach-client -P; else exit; fi";
       };
 
     history.size = 10000;
