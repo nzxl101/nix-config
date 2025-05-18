@@ -1,4 +1,4 @@
-{ pkgs, user, ... }: {
+{ pkgs, user, machineType, lib, ... }: {
   programs.zsh.enable = true;
 
   users = {
@@ -9,5 +9,5 @@
     };
   };
 
-  services.getty.autologinUser = user;
+  services.getty.autologinUser = lib.mkIf (machineType != "server") user;
 }
