@@ -12,5 +12,6 @@
     ./rdp.nix
     ./battery-tweaks.nix
     ./disable-dgpu.nix
+    ./pam.nix
   ];
 }
