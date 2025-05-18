@@ -13,6 +13,7 @@
   }];
   networking.defaultGateway = "192.168.178.1";
   networking.nameservers = [ "192.168.178.1" ];
+  networking.firewall.allowedTCPPorts = [ 22 ];
 
   # SSH
   services.openssh = {
