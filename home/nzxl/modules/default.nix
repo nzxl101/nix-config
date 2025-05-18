@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{ lib, machineType, ... }: {
   imports = [
     ./git.nix
     ./zsh.nix
