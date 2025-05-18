@@ -1,20 +1,21 @@
-{
+{ lib, ... }: {
   imports = [
     ./git.nix
     ./zsh.nix
-    ./chromium.nix
     ./tmux.nix
+    ./yazi.nix
+    ./starship
+    ./btop.nix
+  ] ++ lib.optionals (machineType == "desktop" || machineType == "laptop") [
+    ./chromium.nix
     ./ghostty.nix
     ./hyprland
-    ./yazi.nix
     ./wofi.nix
-    ./starship
     ./vscode
     ./easyeffects
     ./waybar
     ./swaync.nix
     ./stylix.nix
-    ./btop.nix
     ./network-manager-applet.nix
     ./env.nix
   ];
