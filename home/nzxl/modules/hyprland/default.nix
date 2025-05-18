@@ -42,7 +42,7 @@ in
 
       general = {
         gaps_in = 4;
-        gaps_out = 10;
+        gaps_out = 2;
 
         border_size = 1;
 
@@ -63,7 +63,7 @@ in
       decoration = {
         rounding = 0;
 
-        active_opacity = 0.9;
+        active_opacity = 1;
         inactive_opacity = 0.8;
 
         shadow = {
@@ -98,8 +98,26 @@ in
         sensitivity = "-0.2";
       };
 
+      workspace = [
+        "w[t1], gapsout:2, gapsin:0"
+        "w[tg1], gapsout:2, gapsin:0"
+        "f[1], gapsout:2, gapsin:0"
+      ];
+
       windowrulev2 = [
-        # Suppress maximize event
+        # Disable Blur for specific Windows
+        "noblur, class:^(brave-browser)$"
+        "noblur, class:^(code)$"
+
+        # Disable Gaps when Only
+        "bordersize 0, floating:0, onworkspace:w[t1]"
+        "rounding 0, floating:0, onworkspace:w[t1]"
+        "bordersize 0, floating:0, onworkspace:w[tg1]"
+        "rounding 0, floating:0, onworkspace:w[tg1]"
+        "bordersize 0, floating:0, onworkspace:f[1]"
+        "rounding 0, floating:0, onworkspace:f[1]"
+
+        # Suppress events
         "suppressevent maximize, class:.*"
 
         # Suppress XWayland Video Bridge
@@ -117,7 +135,8 @@ in
       "$terminal" = "ghostty";
       "$browser" = "brave";
       "$editor" = "code";
-      "$fileBrowser" = "$terminal -e sh -c 'yazi'";
+      # "$fileBrowser" = "$terminal -e sh -c 'yazi'";
+      "$fileBrowser" = "dolphin";
       "$launcher" = "wofi";
       "$screenshotFull" = "grimblast --notify --freeze copysave screen";
       "$screenshotArea" = "grimblast --notify --freeze copysave area";

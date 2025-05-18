@@ -12,6 +12,10 @@
       url = "github:nix-community/disko/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dolphin-overlay = {
+      url = "github:rumboon/dolphin-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # walker = {
     #   url = "github:abenz1267/walker";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -23,7 +27,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, nixos-hardware, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, nixos-hardware, dolphin-overlay, ... }@inputs:
   let
     system = "x86_64-linux";
     homeStateVersion = "24.11";
@@ -45,6 +49,7 @@
         ./cachix.nix
         ./hosts/common.nix
         ./hosts/${hostname}/configuration.nix
+        { nixpkgs.overlays = [ dolphin-overlay.overlays.default ]; }
       ] ++ nixpkgs.lib.optionals (type == "laptop") [
         nixos-hardware.nixosModules.common-pc-laptop-ssd
       ] ++ nixpkgs.lib.optionals (type == "desktop") [

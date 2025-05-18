@@ -7,4 +7,11 @@
     MESA_SHADER_CACHE_MAX_SIZE = "1G";
     MESA_SHADER_CACHE_DISABLE = "0";
   };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "inode/directory" = "org.kde.dolphin.desktop";
+    };
+  };
 }
