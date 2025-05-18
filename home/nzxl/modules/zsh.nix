@@ -27,14 +27,19 @@
       bindkey "^[[1;5D" backward-word
       bindkey "^[[1;5C" forward-word
 
-      # Tmux session
-      if [ -z "$TMUX" ] && [ -n "$DISPLAY" ]; then
-        tmux attach-session -t default || tmux new-session -s default
-      fi
+      current_hostname="$(hostname)"
 
-      # Wayland session
-      if uwsm check may-start > /dev/null; then
-        exec systemd-cat -t uwsm_start uwsm start default
+      if [ "$current_hostname" = "lynx" ]; then
+        if [ -z "$TMUX" ]; then
+          tmux attach-session -t default || tmux new-session -s default
+        fi
+      else
+        if [ -z "$TMUX" ] && [ -n "$DISPLAY" ]; then
+          tmux attach-session -t default || tmux new-session -s default
+        fi
+        if uwsm check may-start > /dev/null; then
+          exec systemd-cat -t uwsm_start uwsm start default
+        fi
       fi
     '';
   };
