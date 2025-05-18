@@ -1,4 +1,6 @@
-{ lib, hostName, pkgs, pkgs-stable, ... }: {
+{ lib, hostName, pkgs, ... }: {
+  nixpkgs.config.allowUnfree = true;
+
   home.packages = with pkgs; [
     # File Explorer
     kdePackages.dolphin

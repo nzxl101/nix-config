@@ -21,7 +21,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, nixos-hardware, dolphin-overlay, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, dolphin-overlay, ... }@inputs:
   let
     system = "x86_64-linux";
     homeStateVersion = "24.11";
