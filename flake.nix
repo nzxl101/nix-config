@@ -69,6 +69,6 @@
           ./home/${host.user}/home.nix
         ];
       };
-    }));
+    }) hosts);
   };
 }
