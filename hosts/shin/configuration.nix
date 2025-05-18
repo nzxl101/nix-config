@@ -6,6 +6,18 @@
   networking.hostName = hostname;
   system.stateVersion = stateVersion;
 
+  # Enable Hyprland
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
+  security.pam.services = {
+    login = {
+      enableKwallet = true;
+    };
+    hyprlock = {};
+  };
+
   # Sunshine
   services.rdp.enable = true;
 

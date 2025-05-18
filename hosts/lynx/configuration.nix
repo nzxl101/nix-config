@@ -1,7 +1,7 @@
 { pkgs, stateVersion, hostname, user, ... }: {
   imports = [
     ./hardware-configuration.nix
-    ./packages
+    ./packages.nix
   ];
   networking.hostName = hostname;
   system.stateVersion = stateVersion;
