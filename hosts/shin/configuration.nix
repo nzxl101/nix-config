@@ -6,6 +6,9 @@
   networking.hostName = hostname;
   system.stateVersion = stateVersion;
 
+  # Autologin
+  services.getty.autologinUser = user;
+
   # Enable Hyprland
   programs.hyprland = {
     enable = true;

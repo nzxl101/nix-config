@@ -1,6 +1,5 @@
-{ pkgs, user, machineType, lib, ... }: {
+{ pkgs, user, ... }: {
   programs.zsh.enable = true;
-
   users = {
     defaultUserShell = pkgs.zsh;
     users.${user} = {
@@ -8,6 +7,4 @@
       extraGroups = [ "networkmanager" "wheel" "input" ];
     };
   };
-
-  services.getty.autologinUser = lib.mkIf (machineType != "server") user;
 }
