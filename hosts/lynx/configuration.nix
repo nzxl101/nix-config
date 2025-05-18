@@ -13,4 +13,17 @@
   }];
   networking.defaultGateway = "192.168.178.1";
   networking.nameservers = [ "192.168.178.1" ];
+
+  # SSH
+  services.openssh = {
+    enable = true;
+    ports = [ 22 ];
+    settings = {
+      PasswordAuthentication = true;
+      AllowUsers = [ "nzxl" ];
+      UseDns = true;
+      X11Forwarding = false;
+      PermitRootLogin = "no";
+    };
+  };
 }

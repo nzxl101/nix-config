@@ -1,15 +1,19 @@
-{ lib, hostName, pkgs, ... }: {
+{ lib, hostName, pkgs, machineType, ... }: {
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
+    # Cachix
+    cachix
+
+    # Utils
+    microfetch
+
+  ] ++ lib.optionals (machineType == "desktop" || machineType == "laptop")[
     # File Explorer
     kdePackages.dolphin
 
     # OBS
     obs-studio
-
-    # Cachix
-    cachix
 
     # Utils (screenshots, brightness control etc.)
     brightnessctl
@@ -18,7 +22,6 @@
     grimblast
     hyprpicker
     hyprswitch
-    microfetch
     pavucontrol
     playerctl
     wl-clipboard
