@@ -11,6 +11,7 @@
     address = "192.168.178.108";
     prefixLength = 24;
   }];
+  networking.nameservers = [ "192.168.178.1" ];
   networking.firewall.allowedTCPPorts = [ 22 ];
 
   # SSH
