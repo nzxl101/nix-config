@@ -16,7 +16,10 @@
   };
   security.pam.services = {
     login = {
-      enableKwallet = true;
+      kwallet = {
+        enable = true;
+        forceRun = true;
+      };
     };
     hyprlock = {};
   };

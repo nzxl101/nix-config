@@ -11,6 +11,7 @@
   ] ++ lib.optionals (machineType == "desktop" || machineType == "laptop")[
     # File Explorer
     kdePackages.dolphin
+    kdePackages.kwallet-pam
 
     # OBS
     obs-studio
