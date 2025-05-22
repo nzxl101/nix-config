@@ -63,7 +63,7 @@ in
       decoration = {
         rounding = 0;
 
-        active_opacity = 1;
+        active_opacity = 0.95;
         inactive_opacity = 0.8;
 
         shadow = {
@@ -72,11 +72,12 @@ in
 
         blur = {
           enabled = true;
+          size = 50;
         };
       };
 
       animations = {
-        enabled = true;
+        enabled = false;
       };
 
       misc = {
@@ -105,10 +106,6 @@ in
       ];
 
       windowrulev2 = [
-        # Disable Blur for specific Windows
-        "noblur, class:^(brave-browser)$"
-        "noblur, class:^(code)$"
-
         # Disable Gaps when Only
         "bordersize 0, floating:0, onworkspace:w[t1]"
         "rounding 0, floating:0, onworkspace:w[t1]"
