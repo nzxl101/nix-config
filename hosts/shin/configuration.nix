@@ -6,8 +6,16 @@
   networking.hostName = hostname;
   system.stateVersion = stateVersion;
 
-  # Autologin
-  services.getty.autologinUser = user;
+  # Enable Greetd
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.uwsm}/bin/uwsm start default > /dev/null 2>&1";
+        user = user;
+      };
+    };
+  };
 
   # Enable Hyprland
   programs.hyprland = {
@@ -15,13 +23,12 @@
     withUWSM = true;
   };
   security.pam.services = {
-    login = {
+    hyprlock = {
       kwallet = {
         enable = true;
         forceRun = true;
       };
     };
-    hyprlock = {};
   };
 
   # Sunshine

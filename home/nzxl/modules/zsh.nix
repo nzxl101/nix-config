@@ -38,9 +38,6 @@
         if [ -z "$TMUX" ] && [ -n "$DISPLAY" ]; then
           tmux attach-session -t default || tmux new-session -s default
         fi
-        if uwsm check may-start > /dev/null; then
-          exec systemd-cat -t uwsm_start uwsm start default
-        fi
       fi
     '';
   };

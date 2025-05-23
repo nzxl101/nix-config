@@ -4,7 +4,7 @@
     settings = {
       general = {
         disable_loading_bar = true;
-        grace = 10;
+        grace = 0;
         hide_cursor = true;
         no_fade_in = false;
       };
@@ -23,7 +23,7 @@
 
       background = [
         {
-          path = "screenshot";
+          path = "~/nix-config/wallpaper.png";
           blur_passes = 3;
           blur_size = 8;
         }

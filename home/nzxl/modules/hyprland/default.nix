@@ -38,6 +38,7 @@ in
         "wl-paste --type image --watch cliphist store"
         "corectrl"
         "hyprswitch init --show-title &"
+        "hyprlock"
       ];
 
       general = {
@@ -77,8 +78,21 @@ in
       };
 
       animations = {
-        enabled = false;
+        enabled = true;
       };
+      bezier = [
+        "fastEaseInOut, 0.42, 0, 0.58, 1"
+        "easeInSine, 0.47, 0, 0.745, 0.715"
+        "linear, 0, 0, 1, 1"
+      ];
+      animation = [
+        "windows, 1, 1.5, fastEaseInOut, slide"     # Faster window opening
+        "windowsOut, 1, 1, easeInSine, popin 90%"   # Quicker, subtler window closing
+        "fade, 1, 1, linear"                        # Instant fade
+        "workspaces, 1, 1.5, fastEaseInOut, slide"  # Faster workspace switching
+        "border, 1, 1, linear"                      # Instant border changes
+        "windowsMove, 1, 1.5, easeInSine"           # Smoother window dragging
+      ];
 
       misc = {
         force_default_wallpaper = 0;
@@ -142,7 +156,7 @@ in
         # Kill active window
         "$mainMod, Q, killactive"
         # Lock
-        "$mainMod, L, exec, loginctl lock-session"
+        "$mainMod, L, exec, hyprlock"
         # Clipboard
         "$mainMod, V, exec, cliphist list | $launcher --dmenu | cliphist decode | wl-copy"
         # Emoji
