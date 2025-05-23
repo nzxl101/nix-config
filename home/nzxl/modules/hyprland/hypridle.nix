@@ -1,6 +1,6 @@
-{
+{ machineType, lib, ... }: {
   services.hypridle = {
-    enable = true;
+    enable = lib.mkIf (machineType == "laptop") true;
     settings = {
       general = {
         before_sleep_cmd = "loginctl lock-session";

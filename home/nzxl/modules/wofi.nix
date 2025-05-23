@@ -5,7 +5,7 @@
       allow_markup = true;
       allow_images = true;
       width = 600;
-      height = 300;
+      height = 700;
     };
     style = ''
       @define-color	rosewater  #f5e0dc;

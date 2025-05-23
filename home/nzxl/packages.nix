@@ -7,6 +7,7 @@
 
     # Utils
     microfetch
+    tldr
 
   ] ++ lib.optionals (machineType == "desktop" || machineType == "laptop")[
     # File Explorer

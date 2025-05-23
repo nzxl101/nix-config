@@ -9,11 +9,11 @@
         height = 25;
         modules-left = ["custom/logo" "hyprland/workspaces"];
         modules-right = [
+          "tray"
           "custom/weather"
           "pulseaudio"
         ] ++ (if machineType == "laptop" then [ "battery" ] else [ ]) ++ [
           "clock"
-          "tray"
           "custom/notification"
           "custom/power"
         ];
@@ -24,7 +24,7 @@
 
         "custom/power" = {
           format = "⏻";
-          on-click = "wofi-power-menu";
+          on-click = "wofi-power-menu --disable hibernate --disable logout --disable suspend --disable lock-screen";
         };
 
         "hyprland/workspaces" = {
@@ -80,7 +80,7 @@
         };
 
         "clock" = {
-          format = "󰥔 {:%H:%M - %d.%m.%Y}";
+          format = "󰥔 {:%H:%M - 󰃮 %d.%m.%Y}";
           on-click = {};
         };
 

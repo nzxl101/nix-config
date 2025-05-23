@@ -129,23 +129,26 @@ window#waybar {
 #tray {
     margin: 5px 2px;
     color: black;
-    background: #e3a1a1;
+    background: #252535;
     border-radius: 6px;
 }
 
 #custom-notification {
-    padding: 0 10px;
-    margin: 5px 2px;
-    color: black;
-    background: #94e2d5;
+    padding: 0 6px;
+    /* margin: 5px 2px; */
+    color: #94e2d5;
+    background: #1e1e2e;
     border-radius: 6px;
+    font-size: 15px;
 }
 
 #custom-power {
-    font-size: 14px;
-    padding: 0 10px;
-    margin: 5px 2px;
-    color: black;
-    background: #f38ba8;
+    font-size: 20px;
+    padding: 0 3px;
+    padding-right: 6px;
+    padding-bottom: 1px;
+    /* margin: 4px 2px; */
+    color: #f38ba8;
+    background: #1e1e2e;
     border-radius: 6px;
 }

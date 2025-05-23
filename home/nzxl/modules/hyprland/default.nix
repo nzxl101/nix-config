@@ -80,19 +80,19 @@ in
       animations = {
         enabled = true;
       };
-      bezier = [
-        "fastEaseInOut, 0.42, 0, 0.58, 1"
-        "easeInSine, 0.47, 0, 0.745, 0.715"
-        "linear, 0, 0, 1, 1"
-      ];
-      animation = [
-        "windows, 1, 1.5, fastEaseInOut, slide"     # Faster window opening
-        "windowsOut, 1, 1, easeInSine, popin 90%"   # Quicker, subtler window closing
-        "fade, 1, 1, linear"                        # Instant fade
-        "workspaces, 1, 1.5, fastEaseInOut, slide"  # Faster workspace switching
-        "border, 1, 1, linear"                      # Instant border changes
-        "windowsMove, 1, 1.5, easeInSine"           # Smoother window dragging
-      ];
+      # bezier = [
+      #   "smoothEaseInOut, 0.42, 0, 0.58, 1"
+      #   "easeInQuad, 0.5, 0.1, 0.7, 0.4"
+      #   "easeOutQuad, 0.3, 0.6, 0.4, 0.9"
+      # ];
+      # animation = [
+      #   "windows, 1, 1.2, smoothEaseInOut, slide"
+      #   "windowsOut, 1, 1, easeOutQuad, slide"
+      #   "fade, 1, 1, smoothEaseInOut"
+      #   "workspaces, 1, 1.2, smoothEaseInOut, slide"
+      #   "border, 1, 1, easeInQuad"
+      #   "windowsMove, 1, 1.2, smoothEaseInOut"
+      # ];
 
       misc = {
         force_default_wallpaper = 0;
