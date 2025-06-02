@@ -23,12 +23,7 @@
     withUWSM = true;
   };
   security.pam.services = {
-    hyprlock = {
-      kwallet = {
-        enable = true;
-        forceRun = true;
-      };
-    };
+    hyprlock = {};
   };
 
   # Sunshine

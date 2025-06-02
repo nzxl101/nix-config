@@ -11,17 +11,13 @@
       url = "github:nix-community/disko/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dolphin-overlay = {
-      url = "github:rumboon/dolphin-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     stylix = {
       url = "github:danth/stylix/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, dolphin-overlay, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs:
   let
     system = "x86_64-linux";
     homeStateVersion = "24.11";
@@ -42,7 +38,7 @@
         ./hosts/common.nix
         ./hosts/${hostname}/configuration.nix
         {
-          nixpkgs.overlays = [ dolphin-overlay.overlays.default ];
+          nixpkgs.overlays = [ ];
         }
       ];
     };
