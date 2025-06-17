@@ -36,8 +36,9 @@
   # Battery Tweaks
   hardware.battery-tweaks.enable = true;
 
-  # Disable Nvidia dGPU
+  # Nvidia dGPU
   hardware.dgpu.disable = true;
+  hardware.nvidia.enable = false;
 
   # AMD iGPU
   hardware.amdgpu = {
@@ -46,6 +47,7 @@
       ppfeaturemask = "0xffffffff";
     };
   };
+  programs.corectrl.enable = true;
 
   # Bluetooth
   hardware.bluetooth.enable = true;
@@ -54,4 +56,7 @@
 
   # Extra Groups
   users.users.${user} = { extraGroups = [ "openrazer" "plugdev" "corectrl" ]; };
+
+  # Steam
+  programs.steam.enable = true;
 }
