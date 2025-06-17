@@ -1,4 +1,4 @@
-{ lib, hostName, pkgs, machineType, ... }: {
+{ lib, hostName, pkgs, machineType, inputs, ... }: {
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
@@ -10,6 +10,9 @@
     tldr
 
   ] ++ lib.optionals (machineType == "desktop" || machineType == "laptop")[
+    # Hyprpanel
+    inputs.hyprpanel.packages.${pkgs.system}.wrapper
+
     # File Explorer
     pcmanfm
 

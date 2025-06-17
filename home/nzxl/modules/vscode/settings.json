@@ -19,13 +19,12 @@
     "workbench.activityBar.location": "top",
     "editor.cursorBlinking": "smooth",
     "editor.cursorStyle": "line",
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "Horizon Legacy Bold",
     "editor.fontSize": 15,
     "editor.fontFamily": "JetBrains Mono",
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontFamily": "JetBrains Mono",
     "scm.inputFontFamily": "JetBrains Mono",
-    "workbench.iconTheme": "catppuccin-mocha",
 
     // Formatting
     "editor.formatOnSave": true,
@@ -92,10 +91,12 @@
     "editor.guides.bracketPairs": true,
     "remote.SSH.remotePlatform": {
         "192.168.178.150": "linux",
-        "192.168.178.173": "linux"
+        "192.168.178.173": "linux",
+        "192.168.178.5": "linux"
     },
     "discord.removeLowerDetails": true,
     "workbench.editor.enablePreview": false,
     "git.openRepositoryInParentFolders": "never",
-    "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/docker.exe"
+    "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/docker.exe",
+    "workbench.iconTheme": "catppuccin-mocha"
 }

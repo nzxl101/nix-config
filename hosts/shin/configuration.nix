@@ -25,6 +25,7 @@
   security.pam.services = {
     hyprlock = {};
   };
+  services.upower.enable = true;
 
   # Sunshine
   services.rdp.enable = true;
@@ -37,6 +38,14 @@
 
   # Disable Nvidia dGPU
   hardware.dgpu.disable = true;
+
+  # AMD iGPU
+  hardware.amdgpu = {
+    overdrive = {
+      enable = true;
+      ppfeaturemask = "0xffffffff";
+    };
+  };
 
   # Bluetooth
   hardware.bluetooth.enable = true;

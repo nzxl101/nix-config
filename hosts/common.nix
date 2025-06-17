@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, system, ... }: {
     # Nix Settings
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     nix.settings.auto-optimise-store = true;
@@ -34,6 +34,7 @@
         git
         nix-output-monitor
         powertop
+        inputs.agenix.packages."${system}".default
     ];
 
     # Fonts
@@ -56,4 +57,7 @@
 
     # Dbus
     services.dbus.enable = true;
+
+    # SSH
+    services.sshd.enable = true;
 }

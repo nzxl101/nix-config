@@ -15,9 +15,17 @@
       url = "github:danth/stylix/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, agenix, ... }@inputs:
   let
     system = "x86_64-linux";
     homeStateVersion = "24.11";
@@ -37,9 +45,7 @@
         ./cachix.nix
         ./hosts/common.nix
         ./hosts/${hostname}/configuration.nix
-        {
-          nixpkgs.overlays = [ ];
-        }
+        agenix.nixosModules.default
       ];
     };
   in

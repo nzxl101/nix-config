@@ -1,6 +1,6 @@
 { config, lib, hostName, machineType, userName, ... }: {
   programs.waybar = {
-    enable = true;
+    enable = false;
     style = ./style.css;
     settings = {
       mainBar = {

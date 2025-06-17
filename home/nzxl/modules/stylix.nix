@@ -4,29 +4,22 @@
   stylix = {
     enable = true;
     polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/horizon-dark.yaml";
 
     targets = {
-      hyprland.enable = false;
       hyprlock.enable = false;
       waybar.enable = false;
       vscode.enable = false;
+      tmux.enable = true;
       wofi.enable = false;
+
       gtk.extraCss = ''
         window.background,
         window.maximized,
         window.dialog,
         window.message,
-        window.csd,
-        #input,
-        #entry,
-        #entry:selected,
-        #outer-box {
+        window.csd {
           border-radius: 0;
-        }
-
-        #entry:selected {
-          outline: none;
         }
 
         messagedialog.background,
@@ -35,12 +28,8 @@
         messagedialog.message,
         messagedialog.csd {
           border-radius: 0;
-        }
-
-        .control-center,
-        .notification-window,
-        .notification {
-          border-radius: 0;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       '';
     };
@@ -82,6 +71,6 @@
       light = "Papirus-Light";
     };
 
-    image = ../../../wallpaper.png;
+    image = ../../../wallpaper-2.jpg;
   };
 }

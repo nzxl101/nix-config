@@ -1,4 +1,4 @@
-{ lib, hostName, machineType, ... }:
+{ lib, hostName, machineType,config, ... }:
 let
   monitors = if hostName == "shin" then [
     "eDP-1,2560x1440@165,auto,1.6"
@@ -11,6 +11,7 @@ in
     ./hyprpaper.nix
     ./hypridle.nix
     ./hyprlock.nix
+    ./hyprpanel.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -33,7 +34,8 @@ in
       ];
 
       exec-once = [
-        "waybar"
+        # "waybar"
+        "hyprpaper"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "corectrl"
@@ -43,12 +45,12 @@ in
 
       general = {
         gaps_in = 4;
-        gaps_out = 2;
+        gaps_out = 4;
 
         border_size = 1;
 
-        "col.active_border" = "rgba(313244ff) rgba(585b70ff) 45deg";
-        "col.inactive_border" = "rgba(1e1e2eff)";
+        # "col.active_border" = "rgba(${config.stylix.colors.base05}) rgba(585b70ff) 45deg";
+        # "col.inactive_border" = "rgba(1e1e2eff)";
 
         resize_on_border = true;
 
@@ -62,9 +64,9 @@ in
       };
 
       decoration = {
-        rounding = 0;
+        rounding = 4;
 
-        active_opacity = 0.95;
+        active_opacity = 0.9;
         inactive_opacity = 0.8;
 
         shadow = {
@@ -73,7 +75,7 @@ in
 
         blur = {
           enabled = true;
-          size = 50;
+          size = 70;
         };
       };
 
@@ -114,19 +116,19 @@ in
       };
 
       workspace = [
-        "w[t1], gapsout:2, gapsin:0"
-        "w[tg1], gapsout:2, gapsin:0"
-        "f[1], gapsout:2, gapsin:0"
+        "w[t1], gapsout:4, gapsin:0"
+        "w[tg1], gapsout:4, gapsin:0"
+        "f[1], gapsout:4, gapsin:0"
       ];
 
       windowrulev2 = [
         # Disable Gaps when Only
-        "bordersize 0, floating:0, onworkspace:w[t1]"
-        "rounding 0, floating:0, onworkspace:w[t1]"
-        "bordersize 0, floating:0, onworkspace:w[tg1]"
-        "rounding 0, floating:0, onworkspace:w[tg1]"
-        "bordersize 0, floating:0, onworkspace:f[1]"
-        "rounding 0, floating:0, onworkspace:f[1]"
+        # "bordersize 0, floating:0, onworkspace:w[t1]"
+        # "rounding 0, floating:0, onworkspace:w[t1]"
+        # "bordersize 0, floating:0, onworkspace:w[tg1]"
+        # "rounding 0, floating:0, onworkspace:w[tg1]"
+        # "bordersize 0, floating:0, onworkspace:f[1]"
+        # "rounding 0, floating:0, onworkspace:f[1]"
 
         # Suppress events
         "suppressevent maximize, class:.*"
